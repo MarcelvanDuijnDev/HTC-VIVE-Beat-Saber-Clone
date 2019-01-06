@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d10323487cb44348b830bc017eb40b4, type: 3}
+  m_Name: SteamVR_Input_References
+  m_EditorClassIdentifier: 
+  actionSetNames:
+  - _default
+  - platformer
+  - buggy
+  actionSetObjects:
+  - {fileID: 11400000, guid: 6fdc40571fd0d044c843ed118c90cdad, type: 2}
+  - {fileID: 11400000, guid: e7324e1d7c45c7c4383a2a4d96d74877, type: 2}
+  - {fileID: 11400000, guid: 9c86b54f49b822d4c872dfe39908513c, type: 2}
+  actionNames:
+  - __actions_default_in_InteractUI
+  - __actions_default_in_Teleport
+  - __actions_default_in_GrabPinch
+  - __actions_default_in_GrabGrip
+  - __actions_default_in_Pose
+  - __actions_default_in_SkeletonLeftHand
+  - __actions_default_in_SkeletonRightHand
+  - __actions_default_in_Squeeze
+  - __actions_default_in_TouchpadTouch
+  - __actions_default_in_TouchpadPress
+  - __actions_default_in_Menu
+  - __actions_default_in_TouchpadButtonUp
+  - __actions_default_in_TouchpadButtonDown
+  - __actions_default_in_TouchpadButtonLeft
+  - __actions_default_in_TouchpadButtonRight
+  - __actions_default_in_TouchpadButtonCenter
+  - __actions_default_out_Haptic
+  - __actions_platformer_in_Move
+  - __actions_platformer_in_Jump
+  - __actions_buggy_in_Steering
+  - __actions_buggy_in_Throttle
+  - __actions_buggy_in_Brake
+  - __actions_buggy_in_Reset
+  actionObjects:
+  - {fileID: 11400000, guid: aef721e192ea18e489d178c2efde3cb5, type: 2}
+  - {fileID: 11400000, guid: 78d0edb18c33b3644a71c600073208c0, type: 2}
+  - {fileID: 11400000, guid: 0e30dec20b7f9834eaf32c6dc2d2f5fa, type: 2}
+  - {fileID: 11400000, guid: df1f94e9af6519b4cac60e836f8ca96d, type: 2}
+  - {fileID: 11400000, guid: d38128511c0d4f540b355ad5724bb8b9, type: 2}
+  - {fileID: 11400000, guid: ada797b21a1f3a847a7335265e296f00, type: 2}
+  - {fileID: 11400000, guid: 7435cd439b9fec542b79d9d2e6ec4d61, type: 2}
+  - {fileID: 11400000, guid: fadcf4b8f10c6ae43a65d4176db34629, type: 2}
+  - {fileID: 11400000, guid: 431d384dd33a42248a0109b7661f63c7, type: 2}
+  - {fileID: 11400000, guid: 5f74874c7d2e1b3449f124a5ecb11ed8, type: 2}
+  - {fileID: 11400000, guid: d11874c423e8ae847bde50067f89c0fa, type: 2}
+  - {fileID: 11400000, guid: b20391536f8861b46a47c3557be0e283, type: 2}
+  - {fileID: 11400000, guid: 947b2fc02cfe61c45a787afc9a073813, type: 2}
+  - {fileID: 11400000, guid: 1ac95ffe5d4a8904896cdc4e84cc7cd7, type: 2}
+  - {fileID: 11400000, guid: f358d6533e0018544b105c22ecf3948e, type: 2}
+  - {fileID: 11400000, guid: b34b2e24e9a3ae246b6d160161bd4ab7, type: 2}
+  - {fileID: 11400000, guid: a329b6ab95b13624cab1a429a64bd07f, type: 2}
+  - {fileID: 11400000, guid: e7e6f2fd5bd1f584693e49dd57b6ea85, type: 2}
+  - {fileID: 11400000, guid: 69c6b372dd6591041ad1e4fd7c9a2c52, type: 2}
+  - {fileID: 11400000, guid: 8582f61fc407f2d46b234b3343f605d3, type: 2}
+  - {fileID: 11400000, guid: 80c70243df04e2d4aa2788452947ab95, type: 2}
+  - {fileID: 11400000, guid: b06f63fc285494942b9b5e0ea6bd3bf7, type: 2}
+  - {fileID: 11400000, guid: 058a13aa8e102874dba8eeb27243b5b7, type: 2}

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9749a9df6c1a25d4988ed4628585f6c6, type: 3}
+  m_Name: SteamVR_Input_ActionSet_default_In
+  m_EditorClassIdentifier: 
+  actionSet: {fileID: 0}
+  listDirection: 0
+  actions:
+  - {fileID: 11400000, guid: aef721e192ea18e489d178c2efde3cb5, type: 2}
+  - {fileID: 11400000, guid: 78d0edb18c33b3644a71c600073208c0, type: 2}
+  - {fileID: 11400000, guid: 0e30dec20b7f9834eaf32c6dc2d2f5fa, type: 2}
+  - {fileID: 11400000, guid: df1f94e9af6519b4cac60e836f8ca96d, type: 2}
+  - {fileID: 11400000, guid: d38128511c0d4f540b355ad5724bb8b9, type: 2}
+  - {fileID: 11400000, guid: ada797b21a1f3a847a7335265e296f00, type: 2}
+  - {fileID: 11400000, guid: 7435cd439b9fec542b79d9d2e6ec4d61, type: 2}
+  - {fileID: 11400000, guid: fadcf4b8f10c6ae43a65d4176db34629, type: 2}
+  - {fileID: 11400000, guid: 431d384dd33a42248a0109b7661f63c7, type: 2}
+  - {fileID: 11400000, guid: 5f74874c7d2e1b3449f124a5ecb11ed8, type: 2}
+  - {fileID: 11400000, guid: d11874c423e8ae847bde50067f89c0fa, type: 2}
+  - {fileID: 11400000, guid: b20391536f8861b46a47c3557be0e283, type: 2}
+  - {fileID: 11400000, guid: 947b2fc02cfe61c45a787afc9a073813, type: 2}
+  - {fileID: 11400000, guid: 1ac95ffe5d4a8904896cdc4e84cc7cd7, type: 2}
+  - {fileID: 11400000, guid: f358d6533e0018544b105c22ecf3948e, type: 2}
+  - {fileID: 11400000, guid: b34b2e24e9a3ae246b6d160161bd4ab7, type: 2}
+  InteractUI: {fileID: 11400000, guid: aef721e192ea18e489d178c2efde3cb5, type: 2}
+  Teleport: {fileID: 11400000, guid: 78d0edb18c33b3644a71c600073208c0, type: 2}
+  GrabPinch: {fileID: 11400000, guid: 0e30dec20b7f9834eaf32c6dc2d2f5fa, type: 2}
+  GrabGrip: {fileID: 11400000, guid: df1f94e9af6519b4cac60e836f8ca96d, type: 2}
+  Pose: {fileID: 11400000, guid: d38128511c0d4f540b355ad5724bb8b9, type: 2}
+  SkeletonLeftHand: {fileID: 11400000, guid: ada797b21a1f3a847a7335265e296f00, type: 2}
+  SkeletonRightHand: {fileID: 11400000, guid: 7435cd439b9fec542b79d9d2e6ec4d61, type: 2}
+  Squeeze: {fileID: 11400000, guid: fadcf4b8f10c6ae43a65d4176db34629, type: 2}
+  TouchpadTouch: {fileID: 11400000, guid: 431d384dd33a42248a0109b7661f63c7, type: 2}
+  TouchpadPress: {fileID: 11400000, guid: 5f74874c7d2e1b3449f124a5ecb11ed8, type: 2}
+  Menu: {fileID: 11400000, guid: d11874c423e8ae847bde50067f89c0fa, type: 2}
+  TouchpadButtonUp: {fileID: 11400000, guid: b20391536f8861b46a47c3557be0e283, type: 2}
+  TouchpadButtonDown: {fileID: 11400000, guid: 947b2fc02cfe61c45a787afc9a073813, type: 2}
+  TouchpadButtonLeft: {fileID: 11400000, guid: 1ac95ffe5d4a8904896cdc4e84cc7cd7, type: 2}
+  TouchpadButtonRight: {fileID: 11400000, guid: f358d6533e0018544b105c22ecf3948e,
+    type: 2}
+  TouchpadButtonCenter: {fileID: 11400000, guid: b34b2e24e9a3ae246b6d160161bd4ab7,
+    type: 2}
