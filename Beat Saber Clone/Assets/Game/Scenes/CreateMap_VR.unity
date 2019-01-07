@@ -470,9 +470,10 @@ GameObject:
   - component: {fileID: 42820076}
   - component: {fileID: 42820075}
   - component: {fileID: 42820074}
+  - component: {fileID: 42820077}
   m_Layer: 5
   m_Name: Grid_Button (23)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,7 +531,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 42820075}
   m_OnClick:
     m_PersistentCalls:
@@ -571,6 +572,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 42820072}
   m_CullTransparentMesh: 0
+--- !u!65 &42820077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 42820072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &45223260
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,9 +692,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButtonText: {fileID: 944143759}
+  musicTimeMinText: {fileID: 398568299}
+  musicTimeSecText: {fileID: 778394823}
   audioSource: {fileID: 56487177}
   continueMusic: 1
   sliderMusic: {fileID: 629281242}
+  notes:
+    id: 
+    time: []
+    offset: []
+    angle: []
+  gridHandler: {fileID: 325612677}
+  snapAngle: 0
+  snapAngleEnable: 0
+  raycastPoint: {fileID: 429532580}
+  noteID: 0
+  offset: {x: 0, y: 0}
+  angle: 0
+  previewObjects:
+  - {fileID: 1559306885}
+  - {fileID: 173198486}
+  previewObj: {fileID: 0}
 --- !u!4 &56487175
 Transform:
   m_ObjectHideFlags: 0
@@ -1191,9 +1222,10 @@ GameObject:
   - component: {fileID: 105615594}
   - component: {fileID: 105615593}
   - component: {fileID: 105615592}
+  - component: {fileID: 105615595}
   m_Layer: 5
   m_Name: Grid_Button (50)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,7 +1283,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 105615593}
   m_OnClick:
     m_PersistentCalls:
@@ -1292,6 +1324,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 105615590}
   m_CullTransparentMesh: 0
+--- !u!65 &105615595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 105615590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &125631466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,9 +1347,10 @@ GameObject:
   - component: {fileID: 125631470}
   - component: {fileID: 125631469}
   - component: {fileID: 125631468}
+  - component: {fileID: 125631471}
   m_Layer: 5
   m_Name: Grid_Button (24)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,7 +1408,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 125631469}
   m_OnClick:
     m_PersistentCalls:
@@ -1404,161 +1449,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 125631466}
   m_CullTransparentMesh: 0
---- !u!43 &130539897
-Mesh:
+--- !u!65 &125631471
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  serializedVersion: 9
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 24
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 8
-    localAABB:
-      m_Center: {x: 0, y: 0.01, z: 0}
-      m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
-  m_VertexData:
-    serializedVersion: 2
-    m_VertexCount: 8
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 28
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 288
-    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0.01, z: 0}
-    m_Extent: {x: 1.65, y: 0, z: 1.275}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimized: 0
+  m_GameObject: {fileID: 125631466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &146088384 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -1580,9 +1482,10 @@ GameObject:
   - component: {fileID: 151237334}
   - component: {fileID: 151237333}
   - component: {fileID: 151237332}
+  - component: {fileID: 151237335}
   m_Layer: 5
   m_Name: Grid_Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1640,7 +1543,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 151237333}
   m_OnClick:
     m_PersistentCalls:
@@ -1681,6 +1584,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151237330}
   m_CullTransparentMesh: 0
+--- !u!65 &151237335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 151237330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &154697671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,9 +1607,10 @@ GameObject:
   - component: {fileID: 154697675}
   - component: {fileID: 154697674}
   - component: {fileID: 154697673}
+  - component: {fileID: 154697676}
   m_Layer: 5
   m_Name: Grid_Button (68)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1752,7 +1668,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 154697674}
   m_OnClick:
     m_PersistentCalls:
@@ -1793,6 +1709,28 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 154697671}
   m_CullTransparentMesh: 0
+--- !u!65 &154697676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 154697671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &173198486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1033474260466304, guid: 993b41ae28832c743b7d7fec719591b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1481568618}
+--- !u!4 &173198489 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1481568618}
 --- !u!1 &185821394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,9 +1742,10 @@ GameObject:
   - component: {fileID: 185821398}
   - component: {fileID: 185821397}
   - component: {fileID: 185821396}
+  - component: {fileID: 185821399}
   m_Layer: 5
   m_Name: Grid_Button (37)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1864,7 +1803,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 185821397}
   m_OnClick:
     m_PersistentCalls:
@@ -1905,6 +1844,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 185821394}
   m_CullTransparentMesh: 0
+--- !u!65 &185821399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185821394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &195722077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -2081,9 +2032,10 @@ GameObject:
   - component: {fileID: 239762402}
   - component: {fileID: 239762401}
   - component: {fileID: 239762400}
+  - component: {fileID: 239762403}
   m_Layer: 5
   m_Name: Grid_Button (35)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2141,7 +2093,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 239762401}
   m_OnClick:
     m_PersistentCalls:
@@ -2182,6 +2134,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 239762398}
   m_CullTransparentMesh: 0
+--- !u!65 &239762403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 239762398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &241764040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,9 +2157,10 @@ GameObject:
   - component: {fileID: 241764044}
   - component: {fileID: 241764043}
   - component: {fileID: 241764042}
+  - component: {fileID: 241764045}
   m_Layer: 5
   m_Name: Grid_Button (60)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2253,7 +2218,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 241764043}
   m_OnClick:
     m_PersistentCalls:
@@ -2294,6 +2259,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 241764040}
   m_CullTransparentMesh: 0
+--- !u!65 &241764045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241764040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &250643149
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1751145230}
+    m_Modifications:
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1803107797078556, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1866ed5482942eb44ab41dc7b933d425, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &255733174
 Prefab:
   m_ObjectHideFlags: 0
@@ -2371,9 +2394,10 @@ GameObject:
   - component: {fileID: 259673361}
   - component: {fileID: 259673360}
   - component: {fileID: 259673359}
+  - component: {fileID: 259673362}
   m_Layer: 5
   m_Name: Grid_Button (28)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2431,7 +2455,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 259673360}
   m_OnClick:
     m_PersistentCalls:
@@ -2472,6 +2496,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 259673357}
   m_CullTransparentMesh: 0
+--- !u!65 &259673362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 259673357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &266224017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,6 +2764,7 @@ GameObject:
   - component: {fileID: 325612676}
   - component: {fileID: 325612675}
   - component: {fileID: 325612674}
+  - component: {fileID: 325612677}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -2880,6 +2917,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 325612672}
   m_CullTransparentMesh: 0
+--- !u!114 &325612677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325612672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398ca9020d512304eb0f4ebfb4b4e4d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridButtons: []
 --- !u!1 &330380659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,16 +2952,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 330380659}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.37}
-  m_LocalScale: {x: 0.0008487644, y: 0.0008487645, z: 0.0008487644}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00028125328}
+  m_LocalScale: {x: 1.0012549, y: 1.001255, z: 1.0012549}
   m_Children: []
-  m_Father: {fileID: 566820049}
-  m_RootOrder: 3
+  m_Father: {fileID: 950000581}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278.005, y: -172.012}
+  m_AnchoredPosition: {x: -579.42676, y: -175.43004}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330380661
@@ -2966,9 +3015,10 @@ GameObject:
   - component: {fileID: 332548185}
   - component: {fileID: 332548184}
   - component: {fileID: 332548183}
+  - component: {fileID: 332548186}
   m_Layer: 5
   m_Name: Grid_Button (61)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3026,7 +3076,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 332548184}
   m_OnClick:
     m_PersistentCalls:
@@ -3067,6 +3117,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 332548181}
   m_CullTransparentMesh: 0
+--- !u!65 &332548186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 332548181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &334890581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,9 +3140,10 @@ GameObject:
   - component: {fileID: 334890585}
   - component: {fileID: 334890584}
   - component: {fileID: 334890583}
+  - component: {fileID: 334890586}
   m_Layer: 5
   m_Name: Grid_Button (34)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3138,7 +3201,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 334890584}
   m_OnClick:
     m_PersistentCalls:
@@ -3179,39 +3242,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 334890581}
   m_CullTransparentMesh: 0
---- !u!21 &338713503
-Material:
-  serializedVersion: 6
+--- !u!65 &334890586
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_GameObject: {fileID: 334890581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &343477960
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,9 +3340,10 @@ GameObject:
   - component: {fileID: 350902824}
   - component: {fileID: 350902823}
   - component: {fileID: 350902822}
+  - component: {fileID: 350902825}
   m_Layer: 5
   m_Name: Grid_Button (63)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3358,7 +3401,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 350902823}
   m_OnClick:
     m_PersistentCalls:
@@ -3399,6 +3442,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 350902820}
   m_CullTransparentMesh: 0
+--- !u!65 &350902825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350902820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &354723495
 GameObject:
   m_ObjectHideFlags: 0
@@ -3855,6 +3910,81 @@ Transform:
   m_Father: {fileID: 7351075}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &398568297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398568298}
+  - component: {fileID: 398568300}
+  - component: {fileID: 398568299}
+  m_Layer: 5
+  m_Name: Text_CurrentTime_Min
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &398568298
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398568297}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.152}
+  m_LocalScale: {x: 0.00027999998, y: 0.00027999998, z: 0.00027999998}
+  m_Children: []
+  m_Father: {fileID: 566820049}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -273.70398, y: -171.15399}
+  m_SizeDelta: {x: -549.7, y: -346.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &398568299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398568297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 300
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 300
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Time Min
+--- !u!222 &398568300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398568297}
+  m_CullTransparentMesh: 0
 --- !u!1001 &413480571
 Prefab:
   m_ObjectHideFlags: 0
@@ -4001,9 +4131,10 @@ GameObject:
   - component: {fileID: 429240924}
   - component: {fileID: 429240923}
   - component: {fileID: 429240922}
+  - component: {fileID: 429240925}
   m_Layer: 5
   m_Name: Grid_Button (53)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4061,7 +4192,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 429240923}
   m_OnClick:
     m_PersistentCalls:
@@ -4102,6 +4233,103 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429240920}
   m_CullTransparentMesh: 0
+--- !u!65 &429240925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429240920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &429532576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429532580}
+  - component: {fileID: 429532579}
+  - component: {fileID: 429532578}
+  - component: {fileID: 429532577}
+  m_Layer: 2
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &429532577
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429532576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &429532578
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429532576}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &429532579
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429532576}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &429532580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429532576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.32642657, y: 0.917, z: 0.36}
+  m_LocalScale: {x: 0.17087, y: 0.17087, z: 0.17087}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439518460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4263,9 +4491,10 @@ GameObject:
   - component: {fileID: 447842252}
   - component: {fileID: 447842251}
   - component: {fileID: 447842250}
+  - component: {fileID: 447842253}
   m_Layer: 5
   m_Name: Grid_Button (19)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4323,7 +4552,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 447842251}
   m_OnClick:
     m_PersistentCalls:
@@ -4364,6 +4593,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 447842248}
   m_CullTransparentMesh: 0
+--- !u!65 &447842253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447842248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &477426091
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,9 +4907,10 @@ GameObject:
   - component: {fileID: 507493479}
   - component: {fileID: 507493478}
   - component: {fileID: 507493477}
+  - component: {fileID: 507493480}
   m_Layer: 5
   m_Name: Grid_Button (13)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4726,7 +4968,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 507493478}
   m_OnClick:
     m_PersistentCalls:
@@ -4767,6 +5009,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 507493475}
   m_CullTransparentMesh: 0
+--- !u!65 &507493480
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 507493475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &508632926
 GameObject:
   m_ObjectHideFlags: 0
@@ -4994,9 +5248,10 @@ GameObject:
   - component: {fileID: 540280442}
   - component: {fileID: 540280441}
   - component: {fileID: 540280440}
+  - component: {fileID: 540280443}
   m_Layer: 5
   m_Name: Grid_Button (57)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5054,7 +5309,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 540280441}
   m_OnClick:
     m_PersistentCalls:
@@ -5095,6 +5350,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 540280438}
   m_CullTransparentMesh: 0
+--- !u!65 &540280443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540280438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &550929668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,9 +5454,10 @@ GameObject:
   - component: {fileID: 561041620}
   - component: {fileID: 561041619}
   - component: {fileID: 561041618}
+  - component: {fileID: 561041621}
   m_Layer: 5
   m_Name: Grid_Button (48)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5247,7 +5515,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 561041619}
   m_OnClick:
     m_PersistentCalls:
@@ -5288,6 +5556,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 561041616}
   m_CullTransparentMesh: 0
+--- !u!65 &561041621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561041616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &566820045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,8 +5655,8 @@ RectTransform:
   m_Children:
   - {fileID: 1588479976}
   - {fileID: 629281241}
-  - {fileID: 1899321189}
-  - {fileID: 330380660}
+  - {fileID: 398568298}
+  - {fileID: 778394822}
   - {fileID: 950000581}
   - {fileID: 1040114356}
   m_Father: {fileID: 0}
@@ -5398,9 +5678,10 @@ GameObject:
   - component: {fileID: 577221271}
   - component: {fileID: 577221270}
   - component: {fileID: 577221269}
+  - component: {fileID: 577221272}
   m_Layer: 5
   m_Name: Grid_Button (59)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5458,7 +5739,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 577221270}
   m_OnClick:
     m_PersistentCalls:
@@ -5499,6 +5780,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 577221267}
   m_CullTransparentMesh: 0
+--- !u!65 &577221272
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 577221267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &581173099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5510,9 +5803,10 @@ GameObject:
   - component: {fileID: 581173103}
   - component: {fileID: 581173102}
   - component: {fileID: 581173101}
+  - component: {fileID: 581173104}
   m_Layer: 5
   m_Name: Grid_Button (2)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5570,7 +5864,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 581173102}
   m_OnClick:
     m_PersistentCalls:
@@ -5611,6 +5905,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 581173099}
   m_CullTransparentMesh: 0
+--- !u!65 &581173104
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 581173099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &584662535
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,9 +5928,10 @@ GameObject:
   - component: {fileID: 584662539}
   - component: {fileID: 584662538}
   - component: {fileID: 584662537}
+  - component: {fileID: 584662540}
   m_Layer: 5
   m_Name: Grid_Button (7)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5682,7 +5989,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 584662538}
   m_OnClick:
     m_PersistentCalls:
@@ -5723,6 +6030,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 584662535}
   m_CullTransparentMesh: 0
+--- !u!65 &584662540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584662535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &588884330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5734,9 +6053,10 @@ GameObject:
   - component: {fileID: 588884334}
   - component: {fileID: 588884333}
   - component: {fileID: 588884332}
+  - component: {fileID: 588884335}
   m_Layer: 5
   m_Name: Grid_Button (25)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5794,7 +6114,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 588884333}
   m_OnClick:
     m_PersistentCalls:
@@ -5835,6 +6155,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 588884330}
   m_CullTransparentMesh: 0
+--- !u!65 &588884335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 588884330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &589526079
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,9 +6338,10 @@ GameObject:
   - component: {fileID: 620117756}
   - component: {fileID: 620117755}
   - component: {fileID: 620117754}
+  - component: {fileID: 620117757}
   m_Layer: 5
   m_Name: Grid_Button (54)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6066,7 +6399,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 620117755}
   m_OnClick:
     m_PersistentCalls:
@@ -6107,6 +6440,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 620117752}
   m_CullTransparentMesh: 0
+--- !u!65 &620117757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 620117752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &621580797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,9 +6943,10 @@ GameObject:
   - component: {fileID: 665704935}
   - component: {fileID: 665704934}
   - component: {fileID: 665704933}
+  - component: {fileID: 665704936}
   m_Layer: 5
   m_Name: Grid_Button (9)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6658,7 +7004,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 665704934}
   m_OnClick:
     m_PersistentCalls:
@@ -6699,6 +7045,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 665704931}
   m_CullTransparentMesh: 0
+--- !u!65 &665704936
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 665704931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &677472013
 Prefab:
   m_ObjectHideFlags: 0
@@ -6776,9 +7134,10 @@ GameObject:
   - component: {fileID: 696134834}
   - component: {fileID: 696134833}
   - component: {fileID: 696134832}
+  - component: {fileID: 696134835}
   m_Layer: 5
   m_Name: Grid_Button (49)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6836,7 +7195,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 696134833}
   m_OnClick:
     m_PersistentCalls:
@@ -6877,6 +7236,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696134830}
   m_CullTransparentMesh: 0
+--- !u!65 &696134835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 696134830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &702085661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,9 +7259,10 @@ GameObject:
   - component: {fileID: 702085665}
   - component: {fileID: 702085664}
   - component: {fileID: 702085663}
+  - component: {fileID: 702085666}
   m_Layer: 5
   m_Name: Grid_Button (1)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6948,7 +7320,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 702085664}
   m_OnClick:
     m_PersistentCalls:
@@ -6989,6 +7361,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702085661}
   m_CullTransparentMesh: 0
+--- !u!65 &702085666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702085661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &713625403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7000,9 +7384,10 @@ GameObject:
   - component: {fileID: 713625407}
   - component: {fileID: 713625406}
   - component: {fileID: 713625405}
+  - component: {fileID: 713625408}
   m_Layer: 5
   m_Name: Grid_Button (58)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7060,7 +7445,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 713625406}
   m_OnClick:
     m_PersistentCalls:
@@ -7101,6 +7486,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713625403}
   m_CullTransparentMesh: 0
+--- !u!65 &713625408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713625403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &715007133
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,9 +7594,10 @@ GameObject:
   - component: {fileID: 722986251}
   - component: {fileID: 722986250}
   - component: {fileID: 722986249}
+  - component: {fileID: 722986252}
   m_Layer: 5
   m_Name: Grid_Button (46)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7257,7 +7655,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 722986250}
   m_OnClick:
     m_PersistentCalls:
@@ -7298,6 +7696,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722986247}
   m_CullTransparentMesh: 0
+--- !u!65 &722986252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722986247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &725681209
 GameObject:
   m_ObjectHideFlags: 0
@@ -7500,9 +7910,10 @@ GameObject:
   - component: {fileID: 741879554}
   - component: {fileID: 741879553}
   - component: {fileID: 741879552}
+  - component: {fileID: 741879555}
   m_Layer: 5
   m_Name: Grid_Button (69)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7560,7 +7971,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 741879553}
   m_OnClick:
     m_PersistentCalls:
@@ -7601,6 +8012,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741879550}
   m_CullTransparentMesh: 0
+--- !u!65 &741879555
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 741879550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &742685267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -7881,9 +8304,10 @@ GameObject:
   - component: {fileID: 771970702}
   - component: {fileID: 771970701}
   - component: {fileID: 771970700}
+  - component: {fileID: 771970703}
   m_Layer: 5
   m_Name: Grid_Button (56)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7941,7 +8365,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 771970701}
   m_OnClick:
     m_PersistentCalls:
@@ -7982,6 +8406,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771970698}
   m_CullTransparentMesh: 0
+--- !u!65 &771970703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771970698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &776947219
 GameObject:
   m_ObjectHideFlags: 0
@@ -7993,9 +8429,10 @@ GameObject:
   - component: {fileID: 776947223}
   - component: {fileID: 776947222}
   - component: {fileID: 776947221}
+  - component: {fileID: 776947224}
   m_Layer: 5
   m_Name: Grid_Button (20)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8053,7 +8490,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 776947222}
   m_OnClick:
     m_PersistentCalls:
@@ -8094,6 +8531,93 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776947219}
   m_CullTransparentMesh: 0
+--- !u!65 &776947224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 776947219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &778394821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778394822}
+  - component: {fileID: 778394824}
+  - component: {fileID: 778394823}
+  m_Layer: 5
+  m_Name: Text_CurrentTime_Sec
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &778394822
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778394821}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.152}
+  m_LocalScale: {x: 0.00027999998, y: 0.00027999998, z: 0.00027999998}
+  m_Children: []
+  m_Father: {fileID: 566820049}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -273.704, y: -171.036}
+  m_SizeDelta: {x: -549.7, y: -346.7}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &778394823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778394821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 300
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 300
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Time Sec
+--- !u!222 &778394824
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778394821}
+  m_CullTransparentMesh: 0
 --- !u!1 &778561814
 GameObject:
   m_ObjectHideFlags: 0
@@ -8105,9 +8629,10 @@ GameObject:
   - component: {fileID: 778561818}
   - component: {fileID: 778561817}
   - component: {fileID: 778561816}
+  - component: {fileID: 778561819}
   m_Layer: 5
   m_Name: Grid_Button (66)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8165,7 +8690,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 778561817}
   m_OnClick:
     m_PersistentCalls:
@@ -8206,6 +8731,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 778561814}
   m_CullTransparentMesh: 0
+--- !u!65 &778561819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778561814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &781162667
 GameObject:
   m_ObjectHideFlags: 0
@@ -8358,9 +8895,10 @@ GameObject:
   - component: {fileID: 788123348}
   - component: {fileID: 788123347}
   - component: {fileID: 788123346}
+  - component: {fileID: 788123349}
   m_Layer: 5
   m_Name: Grid_Button (33)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8418,7 +8956,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 788123347}
   m_OnClick:
     m_PersistentCalls:
@@ -8459,6 +8997,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 788123344}
   m_CullTransparentMesh: 0
+--- !u!65 &788123349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 788123344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &796182489
 GameObject:
   m_ObjectHideFlags: 0
@@ -8650,9 +9200,10 @@ GameObject:
   - component: {fileID: 815995377}
   - component: {fileID: 815995376}
   - component: {fileID: 815995375}
+  - component: {fileID: 815995378}
   m_Layer: 5
   m_Name: Grid_Button (52)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8710,7 +9261,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 815995376}
   m_OnClick:
     m_PersistentCalls:
@@ -8751,6 +9302,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 815995373}
   m_CullTransparentMesh: 0
+--- !u!65 &815995378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815995373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &818571760
 Prefab:
   m_ObjectHideFlags: 0
@@ -8828,9 +9391,10 @@ GameObject:
   - component: {fileID: 824806010}
   - component: {fileID: 824806009}
   - component: {fileID: 824806008}
+  - component: {fileID: 824806011}
   m_Layer: 5
   m_Name: Grid_Button (12)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8888,7 +9452,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 824806009}
   m_OnClick:
     m_PersistentCalls:
@@ -8929,6 +9493,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 824806006}
   m_CullTransparentMesh: 0
+--- !u!65 &824806011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 824806006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &832137118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9015,9 +9591,10 @@ GameObject:
   - component: {fileID: 848192074}
   - component: {fileID: 848192073}
   - component: {fileID: 848192072}
+  - component: {fileID: 848192075}
   m_Layer: 5
   m_Name: Grid_Button (16)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9075,7 +9652,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 848192073}
   m_OnClick:
     m_PersistentCalls:
@@ -9116,6 +9693,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 848192070}
   m_CullTransparentMesh: 0
+--- !u!65 &848192075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848192070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &868724795
 GameObject:
   m_ObjectHideFlags: 0
@@ -9268,9 +9857,10 @@ GameObject:
   - component: {fileID: 875573742}
   - component: {fileID: 875573741}
   - component: {fileID: 875573740}
+  - component: {fileID: 875573743}
   m_Layer: 5
   m_Name: Grid_Button (51)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9328,7 +9918,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 875573741}
   m_OnClick:
     m_PersistentCalls:
@@ -9369,6 +9959,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 875573738}
   m_CullTransparentMesh: 0
+--- !u!65 &875573743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 875573738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &879811143 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -9471,9 +10073,10 @@ GameObject:
   - component: {fileID: 892732362}
   - component: {fileID: 892732361}
   - component: {fileID: 892732360}
+  - component: {fileID: 892732363}
   m_Layer: 5
   m_Name: Grid_Button (67)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9531,7 +10134,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 892732361}
   m_OnClick:
     m_PersistentCalls:
@@ -9572,6 +10175,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 892732358}
   m_CullTransparentMesh: 0
+--- !u!65 &892732363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 892732358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &900621108
 GameObject:
   m_ObjectHideFlags: 0
@@ -10010,16 +10625,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950000580}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.3699998}
+  m_LocalRotation: {x: -0, y: -0.44008678, z: -0, w: 0.8979553}
+  m_LocalPosition: {x: 0, y: 0, z: 1.087}
   m_LocalScale: {x: 0.0008477006, y: 0.0008477006, z: 0.0008477006}
-  m_Children: []
+  m_Children:
+  - {fileID: 1899321189}
+  - {fileID: 330380660}
   m_Father: {fileID: 566820049}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -52.219, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -277.51382, y: -171.86328}
+  m_AnchoredPosition: {x: -277.222, y: -171.83191}
   m_SizeDelta: {x: 1579.7166, y: 850.1735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950000582
@@ -10162,9 +10779,10 @@ GameObject:
   - component: {fileID: 999204377}
   - component: {fileID: 999204376}
   - component: {fileID: 999204375}
+  - component: {fileID: 999204378}
   m_Layer: 5
   m_Name: Grid_Button (17)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10222,7 +10840,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 999204376}
   m_OnClick:
     m_PersistentCalls:
@@ -10263,6 +10881,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 999204373}
   m_CullTransparentMesh: 0
+--- !u!65 &999204378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 999204373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1028635655
 GameObject:
   m_ObjectHideFlags: 0
@@ -10468,9 +11098,10 @@ GameObject:
   - component: {fileID: 1062553435}
   - component: {fileID: 1062553434}
   - component: {fileID: 1062553433}
+  - component: {fileID: 1062553436}
   m_Layer: 5
   m_Name: Grid_Button (4)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10528,7 +11159,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1062553434}
   m_OnClick:
     m_PersistentCalls:
@@ -10569,6 +11200,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1062553431}
   m_CullTransparentMesh: 0
+--- !u!65 &1062553436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062553431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1063295372
 GameObject:
   m_ObjectHideFlags: 0
@@ -10655,9 +11298,10 @@ GameObject:
   - component: {fileID: 1070113875}
   - component: {fileID: 1070113874}
   - component: {fileID: 1070113873}
+  - component: {fileID: 1070113876}
   m_Layer: 5
   m_Name: Grid_Button (10)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10715,7 +11359,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1070113874}
   m_OnClick:
     m_PersistentCalls:
@@ -10756,6 +11400,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1070113871}
   m_CullTransparentMesh: 0
+--- !u!65 &1070113876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1070113871}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1071175732
 GameObject:
   m_ObjectHideFlags: 0
@@ -10842,9 +11498,10 @@ GameObject:
   - component: {fileID: 1071794040}
   - component: {fileID: 1071794039}
   - component: {fileID: 1071794038}
+  - component: {fileID: 1071794041}
   m_Layer: 5
   m_Name: Grid_Button (42)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10902,7 +11559,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1071794039}
   m_OnClick:
     m_PersistentCalls:
@@ -10943,6 +11600,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1071794036}
   m_CullTransparentMesh: 0
+--- !u!65 &1071794041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071794036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1102187672
 GameObject:
   m_ObjectHideFlags: 0
@@ -11166,9 +11835,10 @@ GameObject:
   - component: {fileID: 1114755148}
   - component: {fileID: 1114755147}
   - component: {fileID: 1114755146}
+  - component: {fileID: 1114755149}
   m_Layer: 5
   m_Name: Grid_Button (47)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11226,7 +11896,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1114755147}
   m_OnClick:
     m_PersistentCalls:
@@ -11267,6 +11937,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1114755144}
   m_CullTransparentMesh: 0
+--- !u!65 &1114755149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1114755144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1120926810
 GameObject:
   m_ObjectHideFlags: 0
@@ -11428,9 +12110,10 @@ GameObject:
   - component: {fileID: 1131478970}
   - component: {fileID: 1131478969}
   - component: {fileID: 1131478968}
+  - component: {fileID: 1131478971}
   m_Layer: 5
   m_Name: Grid_Button (44)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11488,7 +12171,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1131478969}
   m_OnClick:
     m_PersistentCalls:
@@ -11529,6 +12212,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1131478966}
   m_CullTransparentMesh: 0
+--- !u!65 &1131478971
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131478966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1131747954
 GameObject:
   m_ObjectHideFlags: 0
@@ -11615,9 +12310,10 @@ GameObject:
   - component: {fileID: 1161002846}
   - component: {fileID: 1161002845}
   - component: {fileID: 1161002844}
+  - component: {fileID: 1161002847}
   m_Layer: 5
   m_Name: Grid_Button (3)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11675,7 +12371,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1161002845}
   m_OnClick:
     m_PersistentCalls:
@@ -11716,6 +12412,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1161002842}
   m_CullTransparentMesh: 0
+--- !u!65 &1161002847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1161002842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1195900052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -11837,9 +12545,10 @@ GameObject:
   - component: {fileID: 1206115788}
   - component: {fileID: 1206115787}
   - component: {fileID: 1206115786}
+  - component: {fileID: 1206115789}
   m_Layer: 5
   m_Name: Grid_Button (41)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11897,7 +12606,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1206115787}
   m_OnClick:
     m_PersistentCalls:
@@ -11938,6 +12647,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1206115784}
   m_CullTransparentMesh: 0
+--- !u!65 &1206115789
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206115784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1207801108
 Prefab:
   m_ObjectHideFlags: 0
@@ -12363,9 +13084,10 @@ GameObject:
   - component: {fileID: 1297154996}
   - component: {fileID: 1297154995}
   - component: {fileID: 1297154994}
+  - component: {fileID: 1297154997}
   m_Layer: 5
   m_Name: Grid_Button (5)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12423,7 +13145,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1297154995}
   m_OnClick:
     m_PersistentCalls:
@@ -12464,6 +13186,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297154992}
   m_CullTransparentMesh: 0
+--- !u!65 &1297154997
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297154992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1305268482
 GameObject:
   m_ObjectHideFlags: 0
@@ -12475,9 +13209,10 @@ GameObject:
   - component: {fileID: 1305268486}
   - component: {fileID: 1305268485}
   - component: {fileID: 1305268484}
+  - component: {fileID: 1305268487}
   m_Layer: 5
   m_Name: Grid_Button (40)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12535,7 +13270,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1305268485}
   m_OnClick:
     m_PersistentCalls:
@@ -12576,6 +13311,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305268482}
   m_CullTransparentMesh: 0
+--- !u!65 &1305268487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305268482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1318205139
 Prefab:
   m_ObjectHideFlags: 0
@@ -12726,7 +13473,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 6adadb8304cb69646a2fb049c506a27a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.916
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6adadb8304cb69646a2fb049c506a27a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12775,7 +13522,7 @@ Prefab:
     - target: {fileID: 2300004, guid: 6adadb8304cb69646a2fb049c506a27a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 912e75155f7b16840bd01f2742094df8, type: 2}
+      objectReference: {fileID: 2100000, guid: 37fbbc8dc6e1c1c49922383a8fe9343a, type: 2}
     - target: {fileID: 100000, guid: 6adadb8304cb69646a2fb049c506a27a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -12800,7 +13547,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 6adadb8304cb69646a2fb049c506a27a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.527
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6adadb8304cb69646a2fb049c506a27a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13293,9 +14040,10 @@ GameObject:
   - component: {fileID: 1428472407}
   - component: {fileID: 1428472406}
   - component: {fileID: 1428472405}
+  - component: {fileID: 1428472408}
   m_Layer: 5
   m_Name: Grid_Button (14)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13353,7 +14101,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1428472406}
   m_OnClick:
     m_PersistentCalls:
@@ -13394,6 +14142,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1428472403}
   m_CullTransparentMesh: 0
+--- !u!65 &1428472408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428472403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1431733315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -13490,9 +14250,10 @@ GameObject:
   - component: {fileID: 1443577261}
   - component: {fileID: 1443577260}
   - component: {fileID: 1443577259}
+  - component: {fileID: 1443577262}
   m_Layer: 5
   m_Name: Grid_Button (21)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13550,7 +14311,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1443577260}
   m_OnClick:
     m_PersistentCalls:
@@ -13591,6 +14352,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443577257}
   m_CullTransparentMesh: 0
+--- !u!65 &1443577262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443577257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1445441628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -13687,9 +14460,10 @@ GameObject:
   - component: {fileID: 1466210622}
   - component: {fileID: 1466210621}
   - component: {fileID: 1466210620}
+  - component: {fileID: 1466210623}
   m_Layer: 5
   m_Name: Grid_Button (55)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13747,7 +14521,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1466210621}
   m_OnClick:
     m_PersistentCalls:
@@ -13788,6 +14562,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466210618}
   m_CullTransparentMesh: 0
+--- !u!65 &1466210623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466210618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1466765098
 GameObject:
   m_ObjectHideFlags: 0
@@ -13799,9 +14585,10 @@ GameObject:
   - component: {fileID: 1466765102}
   - component: {fileID: 1466765101}
   - component: {fileID: 1466765100}
+  - component: {fileID: 1466765103}
   m_Layer: 5
   m_Name: Grid_Button (65)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13859,7 +14646,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1466765101}
   m_OnClick:
     m_PersistentCalls:
@@ -13900,6 +14687,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466765098}
   m_CullTransparentMesh: 0
+--- !u!65 &1466765103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466765098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1472107731
 GameObject:
   m_ObjectHideFlags: 0
@@ -14332,6 +15131,52 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477741028}
   m_CullTransparentMesh: 0
+--- !u!1001 &1481568618
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1751145230}
+    m_Modifications:
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390135476822442, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033474260466304, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 993b41ae28832c743b7d7fec719591b1, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1495010259
 GameObject:
   m_ObjectHideFlags: 0
@@ -14343,9 +15188,10 @@ GameObject:
   - component: {fileID: 1495010263}
   - component: {fileID: 1495010262}
   - component: {fileID: 1495010261}
+  - component: {fileID: 1495010264}
   m_Layer: 5
   m_Name: Grid_Button (6)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14403,7 +15249,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1495010262}
   m_OnClick:
     m_PersistentCalls:
@@ -14444,6 +15290,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1495010259}
   m_CullTransparentMesh: 0
+--- !u!65 &1495010264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1495010259}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1521263777
 Prefab:
   m_ObjectHideFlags: 0
@@ -14521,9 +15379,10 @@ GameObject:
   - component: {fileID: 1549307236}
   - component: {fileID: 1549307235}
   - component: {fileID: 1549307234}
+  - component: {fileID: 1549307237}
   m_Layer: 5
   m_Name: Grid_Button (36)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14581,7 +15440,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1549307235}
   m_OnClick:
     m_PersistentCalls:
@@ -14622,6 +15481,28 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1549307232}
   m_CullTransparentMesh: 0
+--- !u!65 &1549307237
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1549307232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1559306885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1803107797078556, guid: 1866ed5482942eb44ab41dc7b933d425,
+    type: 2}
+  m_PrefabInternal: {fileID: 250643149}
+--- !u!4 &1559306888 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4211475792552512, guid: 1866ed5482942eb44ab41dc7b933d425,
+    type: 2}
+  m_PrefabInternal: {fileID: 250643149}
 --- !u!1 &1569498095
 GameObject:
   m_ObjectHideFlags: 0
@@ -14633,9 +15514,10 @@ GameObject:
   - component: {fileID: 1569498099}
   - component: {fileID: 1569498098}
   - component: {fileID: 1569498097}
+  - component: {fileID: 1569498100}
   m_Layer: 5
   m_Name: Grid_Button (22)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14693,7 +15575,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1569498098}
   m_OnClick:
     m_PersistentCalls:
@@ -14734,6 +15616,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1569498095}
   m_CullTransparentMesh: 0
+--- !u!65 &1569498100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1569498095}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1571895073
 GameObject:
   m_ObjectHideFlags: 0
@@ -15183,9 +16077,10 @@ GameObject:
   - component: {fileID: 1613625784}
   - component: {fileID: 1613625783}
   - component: {fileID: 1613625782}
+  - component: {fileID: 1613625785}
   m_Layer: 5
   m_Name: Grid_Button (8)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15243,7 +16138,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1613625783}
   m_OnClick:
     m_PersistentCalls:
@@ -15284,6 +16179,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1613625780}
   m_CullTransparentMesh: 0
+--- !u!65 &1613625785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1613625780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1614345110
 GameObject:
   m_ObjectHideFlags: 0
@@ -15434,6 +16341,161 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1638472397}
   m_CullTransparentMesh: 0
+--- !u!43 &1657872150
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  serializedVersion: 9
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 24
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 8
+    localAABB:
+      m_Center: {x: 0, y: 0.01, z: 0}
+      m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000004000100010004000500010005000200020005000600020006000300030006000700030007000000000007000400
+  m_VertexData:
+    serializedVersion: 2
+    m_VertexCount: 8
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 28
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 288
+    _typelessdata: 0000c03f0ad7233c000090bf000000000000803f0000803f0000803f00000000000000000000c0bf0ad7233c000090bf000000000000803f0000803f0000803f0000803f000000000000c0bf0ad7233c0000903f000000000000803f0000803f0000803f00000000000000000000c03f0ad7233c0000903f000000000000803f0000803f0000803f0000803f000000003333d33f0ad7233c3333a3bf000000000000803f0000803f00000000000000000000803f3333d3bf0ad7233c3333a3bf000000000000803f0000803f000000000000803f0000803f3333d3bf0ad7233c3333a33f000000000000803f0000803f00000000000000000000803f3333d33f0ad7233c3333a33f000000000000803f0000803f000000000000803f0000803f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0.01, z: 0}
+    m_Extent: {x: 1.65, y: 0, z: 1.275}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimized: 0
 --- !u!1 &1684759579
 GameObject:
   m_ObjectHideFlags: 0
@@ -15596,9 +16658,10 @@ GameObject:
   - component: {fileID: 1725862834}
   - component: {fileID: 1725862833}
   - component: {fileID: 1725862832}
+  - component: {fileID: 1725862835}
   m_Layer: 5
   m_Name: Grid_Button (30)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15656,7 +16719,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1725862833}
   m_OnClick:
     m_PersistentCalls:
@@ -15697,6 +16760,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725862830}
   m_CullTransparentMesh: 0
+--- !u!65 &1725862835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1725862830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1735852920
 GameObject:
   m_ObjectHideFlags: 0
@@ -15708,9 +16783,10 @@ GameObject:
   - component: {fileID: 1735852924}
   - component: {fileID: 1735852923}
   - component: {fileID: 1735852922}
+  - component: {fileID: 1735852925}
   m_Layer: 5
   m_Name: Grid_Button (11)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15768,7 +16844,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1735852923}
   m_OnClick:
     m_PersistentCalls:
@@ -15809,6 +16885,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1735852920}
   m_CullTransparentMesh: 0
+--- !u!65 &1735852925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1735852920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1741634676
 GameObject:
   m_ObjectHideFlags: 0
@@ -15937,6 +17025,36 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1746526816}
   m_CullTransparentMesh: 0
+--- !u!1 &1751145229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751145230}
+  m_Layer: 0
+  m_Name: PreviewObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751145230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1751145229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 173198489}
+  - {fileID: 1559306888}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1752942449
 GameObject:
   m_ObjectHideFlags: 0
@@ -15992,9 +17110,10 @@ GameObject:
   - component: {fileID: 1773401736}
   - component: {fileID: 1773401735}
   - component: {fileID: 1773401734}
+  - component: {fileID: 1773401737}
   m_Layer: 5
   m_Name: Grid_Button (45)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16052,7 +17171,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1773401735}
   m_OnClick:
     m_PersistentCalls:
@@ -16093,6 +17212,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1773401732}
   m_CullTransparentMesh: 0
+--- !u!65 &1773401737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1773401732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1775329427
 GameObject:
   m_ObjectHideFlags: 0
@@ -16170,9 +17301,10 @@ GameObject:
   - component: {fileID: 1780685453}
   - component: {fileID: 1780685452}
   - component: {fileID: 1780685451}
+  - component: {fileID: 1780685454}
   m_Layer: 5
   m_Name: Grid_Button (26)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16230,7 +17362,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1780685452}
   m_OnClick:
     m_PersistentCalls:
@@ -16271,6 +17403,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1780685449}
   m_CullTransparentMesh: 0
+--- !u!65 &1780685454
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1780685449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1783319394
 GameObject:
   m_ObjectHideFlags: 0
@@ -16508,9 +17652,10 @@ GameObject:
   - component: {fileID: 1810598539}
   - component: {fileID: 1810598538}
   - component: {fileID: 1810598537}
+  - component: {fileID: 1810598540}
   m_Layer: 5
   m_Name: Grid_Button (32)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16568,7 +17713,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1810598538}
   m_OnClick:
     m_PersistentCalls:
@@ -16609,6 +17754,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1810598535}
   m_CullTransparentMesh: 0
+--- !u!65 &1810598540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1810598535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1812994871
 GameObject:
   m_ObjectHideFlags: 0
@@ -16832,9 +17989,10 @@ GameObject:
   - component: {fileID: 1847992585}
   - component: {fileID: 1847992584}
   - component: {fileID: 1847992583}
+  - component: {fileID: 1847992586}
   m_Layer: 5
   m_Name: Grid_Button (15)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16892,7 +18050,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1847992584}
   m_OnClick:
     m_PersistentCalls:
@@ -16933,6 +18091,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1847992581}
   m_CullTransparentMesh: 0
+--- !u!65 &1847992586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1847992581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1893977028
 GameObject:
   m_ObjectHideFlags: 0
@@ -17031,16 +18201,16 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1899321188}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.3699998}
-  m_LocalScale: {x: 0.0008477006, y: 0.0008477006, z: 0.0008477006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 566820049}
-  m_RootOrder: 2
+  m_Father: {fileID: 950000581}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278.04498, y: -171.723}
+  m_AnchoredPosition: {x: -626.5873, y: 165.47592}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1899321190
@@ -17306,9 +18476,10 @@ GameObject:
   - component: {fileID: 1950604380}
   - component: {fileID: 1950604379}
   - component: {fileID: 1950604378}
+  - component: {fileID: 1950604381}
   m_Layer: 5
   m_Name: Grid_Button (43)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17366,7 +18537,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1950604379}
   m_OnClick:
     m_PersistentCalls:
@@ -17407,6 +18578,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1950604376}
   m_CullTransparentMesh: 0
+--- !u!65 &1950604381
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1950604376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1964889292
 GameObject:
   m_ObjectHideFlags: 0
@@ -17616,9 +18799,10 @@ GameObject:
   - component: {fileID: 1978843077}
   - component: {fileID: 1978843076}
   - component: {fileID: 1978843075}
+  - component: {fileID: 1978843078}
   m_Layer: 5
   m_Name: Grid_Button (27)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17676,7 +18860,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1978843076}
   m_OnClick:
     m_PersistentCalls:
@@ -17717,6 +18901,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1978843073}
   m_CullTransparentMesh: 0
+--- !u!65 &1978843078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1978843073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1979269262
 GameObject:
   m_ObjectHideFlags: 0
@@ -17803,9 +18999,10 @@ GameObject:
   - component: {fileID: 1981515500}
   - component: {fileID: 1981515499}
   - component: {fileID: 1981515498}
+  - component: {fileID: 1981515501}
   m_Layer: 5
   m_Name: Grid_Button (38)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17863,7 +19060,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1981515499}
   m_OnClick:
     m_PersistentCalls:
@@ -17904,6 +19101,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981515496}
   m_CullTransparentMesh: 0
+--- !u!65 &1981515501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981515496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1985902981
 GameObject:
   m_ObjectHideFlags: 0
@@ -17990,9 +19199,10 @@ GameObject:
   - component: {fileID: 1986834826}
   - component: {fileID: 1986834825}
   - component: {fileID: 1986834824}
+  - component: {fileID: 1986834827}
   m_Layer: 5
   m_Name: Grid_Button (62)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18050,7 +19260,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1986834825}
   m_OnClick:
     m_PersistentCalls:
@@ -18091,6 +19301,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1986834822}
   m_CullTransparentMesh: 0
+--- !u!65 &1986834827
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986834822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1996896645 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -18262,9 +19484,10 @@ GameObject:
   - component: {fileID: 2016376704}
   - component: {fileID: 2016376703}
   - component: {fileID: 2016376702}
+  - component: {fileID: 2016376705}
   m_Layer: 5
   m_Name: Grid_Button (18)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18322,7 +19545,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2016376703}
   m_OnClick:
     m_PersistentCalls:
@@ -18363,6 +19586,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016376700}
   m_CullTransparentMesh: 0
+--- !u!65 &2016376705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2016376700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2016674990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -18384,9 +19619,10 @@ GameObject:
   - component: {fileID: 2017304163}
   - component: {fileID: 2017304162}
   - component: {fileID: 2017304161}
+  - component: {fileID: 2017304164}
   m_Layer: 5
   m_Name: Grid_Button (29)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18444,7 +19680,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2017304162}
   m_OnClick:
     m_PersistentCalls:
@@ -18485,6 +19721,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2017304159}
   m_CullTransparentMesh: 0
+--- !u!65 &2017304164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2017304159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2041022764
 GameObject:
   m_ObjectHideFlags: 0
@@ -18496,9 +19744,10 @@ GameObject:
   - component: {fileID: 2041022768}
   - component: {fileID: 2041022767}
   - component: {fileID: 2041022766}
+  - component: {fileID: 2041022769}
   m_Layer: 5
   m_Name: Grid_Button (64)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18556,7 +19805,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2041022767}
   m_OnClick:
     m_PersistentCalls:
@@ -18597,6 +19846,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041022764}
   m_CullTransparentMesh: 0
+--- !u!65 &2041022769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2041022764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2054676494
 GameObject:
   m_ObjectHideFlags: 0
@@ -18608,9 +19869,10 @@ GameObject:
   - component: {fileID: 2054676498}
   - component: {fileID: 2054676497}
   - component: {fileID: 2054676496}
+  - component: {fileID: 2054676499}
   m_Layer: 5
   m_Name: Grid_Button (39)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18668,7 +19930,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2054676497}
   m_OnClick:
     m_PersistentCalls:
@@ -18709,6 +19971,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2054676494}
   m_CullTransparentMesh: 0
+--- !u!65 &2054676499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2054676494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2059184911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e06919b786601d941bf06be5cef62d21,
@@ -18869,6 +20143,39 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078716906}
   m_CullTransparentMesh: 0
+--- !u!21 &2078929368
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2080639814
 GameObject:
   m_ObjectHideFlags: 0
@@ -19006,11 +20313,11 @@ Prefab:
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 130539897}
+      objectReference: {fileID: 1657872150}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 338713503}
+      objectReference: {fileID: 2078929368}
     - target: {fileID: 20000014031267948, guid: 4d293c8e162f3874b982baadd71153d2,
         type: 2}
       propertyPath: m_ClearFlags
@@ -19068,9 +20375,10 @@ GameObject:
   - component: {fileID: 2118049038}
   - component: {fileID: 2118049037}
   - component: {fileID: 2118049036}
+  - component: {fileID: 2118049039}
   m_Layer: 5
   m_Name: Grid_Button (31)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19128,7 +20436,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2118049037}
   m_OnClick:
     m_PersistentCalls:
@@ -19169,6 +20477,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118049034}
   m_CullTransparentMesh: 0
+--- !u!65 &2118049039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2118049034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2123236065
 GameObject:
   m_ObjectHideFlags: 0
