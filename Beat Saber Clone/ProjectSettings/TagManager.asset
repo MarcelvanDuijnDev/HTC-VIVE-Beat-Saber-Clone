@@ -10,6 +10,7 @@ TagManager:
   - Left
   - Saber
   - Button
+  - Button1
   layers:
   - Default
   - TransparentFX

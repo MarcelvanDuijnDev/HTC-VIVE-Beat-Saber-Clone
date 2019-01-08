@@ -11,10 +11,11 @@ public class Saber : MonoBehaviour
     [SerializeField] private int saberID;
     [SerializeField] private ScoreHandler scoreHandlerScript;
     [SerializeField] private Transform raycastPoint;
+    [SerializeField] private ParticleSystem effect;
 
     public SteamVR_Behaviour_Pose pose;
 
-    public GameObject obj;
+    //public GameObject obj;
     private Vector3 rot;
     private float rotZ;
 
@@ -26,6 +27,7 @@ public class Saber : MonoBehaviour
             Debug.DrawRay(raycastPoint.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             if (hit.transform.gameObject.CompareTag("Right") && saberID == 0)
             {
+                effect.Play();
                 rot = (new Vector3(hit.point.x,hit.point.y,hit.transform.position.z) - hit.transform.position).normalized;
                 Vector3 rotCalc = Quaternion.LookRotation(rot).ToEuler();
 
@@ -45,7 +47,7 @@ public class Saber : MonoBehaviour
                 {
                     rotZ = (-90 * rot.x) + 270;
                 }
-                obj.transform.eulerAngles = new Vector3(0, 0, -rotZ);
+                //obj.transform.eulerAngles = new Vector3(0, 0, -rotZ);
 
                 hit.transform.gameObject.SetActive(false);
                 haptic.Execute(0, 0.3f, 60, 1f, SteamVR_Input_Sources.RightHand);
@@ -73,6 +75,7 @@ public class Saber : MonoBehaviour
             }
             if (hit.transform.gameObject.CompareTag("Left") && saberID == 1)
             {
+                effect.Play();
                 rot = (new Vector3(hit.point.x, hit.point.y, hit.transform.position.z) - hit.transform.position).normalized;
                 Vector3 rotCalc = Quaternion.LookRotation(rot).ToEuler();
 
@@ -92,7 +95,7 @@ public class Saber : MonoBehaviour
                 {
                     rotZ = (-90 * rot.x) + 270;
                 }
-                obj.transform.eulerAngles = new Vector3(0, 0, -rotZ);
+                //obj.transform.eulerAngles = new Vector3(0, 0, -rotZ);
 
                 scoreHandlerScript.AddScore(100);
                 hit.transform.gameObject.SetActive(false);

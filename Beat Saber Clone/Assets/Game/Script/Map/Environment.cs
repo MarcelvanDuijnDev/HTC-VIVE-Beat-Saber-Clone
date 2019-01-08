@@ -4,33 +4,39 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    private enum Options            { NoWall, Wall1, Wall2, Wall3, Wall4, Wall5};
-    private enum AudioVisualizer    { NoVisualizer, Visualizer1 };
-    private enum Ground             { NoGround, Ground1, Ground2 };
-
     [Header("Options")]
-    [SerializeField] private Options options;
-    [SerializeField] private AudioVisualizer audioVisualizer;
-    [SerializeField] private Ground ground;
+    [SerializeField] private int options;
+    [SerializeField] private int audioVisualizer;
+    [SerializeField] private int ground;
 
     [SerializeField] private Color backgroundColor;
 
     [SerializeField] private float intesity;
 
     [Header("SetObjects")]
-    [SerializeField] private GameObject[] envObj;
+    [SerializeField] private GameObject envObjParent;
     [SerializeField] private GameObject audioVisualizerObj;
     [SerializeField] private GameObject groundObj;
     [SerializeField] private Camera camera;
 
-    float rot1;
-    float rot2;
-	
-	void Update ()
+    private GameObject[] envObj;
+    private float rot1;
+    private float rot2;
+
+    private void Start()
+    {
+        envObj = new GameObject[envObjParent.transform.childCount];
+        for (int i = 0; i < envObjParent.transform.childCount; i++)
+        {
+            envObj[i] = envObjParent.transform.GetChild(i).gameObject;
+        }
+    }
+
+    void Update ()
     {
         switch (options)
         {
-            case Options.NoWall:
+            case 0:
                 if(envObj[envObj.Length -1].activeSelf)
                 {
                     for (int i = 0; i < envObj.Length; i++)
@@ -39,7 +45,7 @@ public class Environment : MonoBehaviour
                     }
                 }
                 break;
-            case Options.Wall1:
+            case 1:
                 if (!envObj[envObj.Length - 1].activeSelf)
                 {
                     for (int i = 0; i < envObj.Length; i++)
@@ -56,7 +62,7 @@ public class Environment : MonoBehaviour
                     envObj[i].transform.rotation = Quaternion.Euler(0, 0, rot1 * (i + 1) * intesity * 0.001f);
                 }
                 break;
-            case Options.Wall2:
+            case 2:
                 if (!envObj[envObj.Length - 1].activeSelf)
                 {
                     for (int i = 0; i < envObj.Length; i++)
@@ -74,7 +80,7 @@ public class Environment : MonoBehaviour
                     envObj[i].transform.rotation = Quaternion.Euler(0, 0, rot2 * (i + 1) * intesity * 0.1f);
                 }
                 break;
-            case Options.Wall3:
+            case 3:
                 if (!envObj[envObj.Length - 1].activeSelf)
                 {
                     for (int i = 0; i < envObj.Length; i++)
@@ -94,7 +100,7 @@ public class Environment : MonoBehaviour
                         envObj[i].transform.rotation = Quaternion.Euler(0, 0, -rot1 * (i + -1) * intesity * 0.001f);
                 }
                 break;
-            case Options.Wall4:
+            case 4:
                 if (!envObj[envObj.Length - 1].activeSelf)
                 {
                     for (int i = 0; i < envObj.Length; i++)
@@ -114,7 +120,7 @@ public class Environment : MonoBehaviour
                         envObj[i].transform.rotation = Quaternion.Euler(0, 0, rot1 * (i + 1) * intesity * 0.003f);
                 }
                 break;
-            case Options.Wall5:
+            case 5:
                 if (!envObj[envObj.Length - 1].activeSelf)
                 {
                     for (int i = 0; i < envObj.Length; i++)
@@ -137,22 +143,22 @@ public class Environment : MonoBehaviour
         }
         switch (audioVisualizer)
         {
-            case AudioVisualizer.NoVisualizer:
+            case 0:
                 if(audioVisualizerObj.activeSelf)
                 audioVisualizerObj.SetActive(false);
                 break;
-            case AudioVisualizer.Visualizer1:
+            case 1:
                 if (!audioVisualizerObj.activeSelf)
                     audioVisualizerObj.SetActive(true);
                 break;
         }
         switch (ground)
         {
-            case Ground.NoGround:
+            case 0:
                 if (groundObj.activeSelf)
                     groundObj.SetActive(false);
                 break;
-            case Ground.Ground1:
+            case 1:
                 if (!groundObj.activeSelf)
                     groundObj.SetActive(true);
                 break;
@@ -161,5 +167,12 @@ public class Environment : MonoBehaviour
         {
             camera.backgroundColor = backgroundColor;
         }
+    }
+
+    public void SetOptions(int _options, int _audioVis, int _ground)
+    {
+        options = _options;
+        audioVisualizer = _audioVis;
+        ground = _ground;
     }
 }

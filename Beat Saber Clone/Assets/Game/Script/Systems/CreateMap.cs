@@ -8,6 +8,7 @@ public class CreateMap : MonoBehaviour
     [SerializeField] private Text playButtonText;
     [SerializeField] private Text musicTimeMinText;
     [SerializeField] private Text musicTimeSecText;
+    [SerializeField] private Text noteAngleText;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private bool continueMusic;
     [SerializeField] private Slider sliderMusic;
@@ -21,6 +22,8 @@ public class CreateMap : MonoBehaviour
 
     [Header("Other")]
     [SerializeField] private Transform raycastPoint;
+    [SerializeField] private GameObject uiObject;
+    [SerializeField] private bool hideUI;
 
     [Header("NoteInfo")]
     [SerializeField] private int noteID;
@@ -43,6 +46,8 @@ public class CreateMap : MonoBehaviour
 
     void Update()
     {
+        SetText();
+
         if (continueMusic && !audioSource.isPlaying)
         {
             audioSource.Play();
@@ -65,10 +70,6 @@ public class CreateMap : MonoBehaviour
             musicTime = sliderMusic.value;
         }
 
-        timerString = string.Format("{0:00}:{1:00}:{2:00}", Mathf.Floor(musicTime / 3600), Mathf.Floor((musicTime / 60) % 60), musicTime % 60);
-        musicTimeMinText.text = timerString;
-        musicTimeSecText.text = musicTime.ToString("0") + "s";
-
         RaycastHit hit;
         if (Physics.Raycast(raycastPoint.position, raycastPoint.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
@@ -82,6 +83,11 @@ public class CreateMap : MonoBehaviour
                     previewObj.transform.position = hit.transform.position;
                     previewObj.transform.eulerAngles = new Vector3(0, 0, calcAngle);
                 }
+                else
+                {
+                    previewObjects[noteID].SetActive(true);
+                    previewObj = previewObjects[noteID];
+                }
 
                 if (Input.GetKeyDown(KeyCode.O))
                 {
@@ -90,6 +96,24 @@ public class CreateMap : MonoBehaviour
                     notes.offset.Add(new Vector2(hit.transform.position.x, hit.transform.position.y));
                     notes.angle.Add(angle);
                 }
+            }
+            else
+            {
+                if (previewObj != null)
+                {
+                    gridHandler.ChangeButtonNull();
+                    previewObj.SetActive(false);
+                    previewObj = null;
+                }
+            }
+
+            if (hit.transform.gameObject.CompareTag("Button1"))
+            {
+                gridHandler.ChangeButton1(hit.transform.gameObject);
+            }
+            else
+            {
+                gridHandler.ChangeButton1Null();
             }
         }
 
@@ -100,6 +124,9 @@ public class CreateMap : MonoBehaviour
         }
         else
             calcAngle = angle;
+
+        //Set Angle
+        
     }
 
     void SetPreviewObject()
@@ -117,7 +144,22 @@ public class CreateMap : MonoBehaviour
         continueMusic = !continueMusic;
     }
 
+    public void HideUI()
+    {
+        hideUI = !hideUI;
+        if (hideUI)
+            uiObject.SetActive(false);
+        else
+            uiObject.SetActive(true);
+    }
 
+    void SetText()
+    {
+        timerString = string.Format("{0:00}:{1:00}:{2:00}", Mathf.Floor(musicTime / 3600), Mathf.Floor((musicTime / 60) % 60), musicTime % 60);
+        musicTimeMinText.text = timerString;
+        musicTimeSecText.text = musicTime.ToString("0") + "s";
+        noteAngleText.text = "Note angle: " + calcAngle.ToString("0.00");
+    }
 
     private void PlaceNote(int _noteID, Vector2 _offSet, float _time, float _angle)
     {

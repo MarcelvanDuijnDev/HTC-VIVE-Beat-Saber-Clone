@@ -30,7 +30,6 @@ public class ScoreHandler : MonoBehaviour
 
     public void AddScore(float _Score)
     {
-        score = 0;
         score += _Score * (1 + multiply);
         combo++;
         checkHits++;

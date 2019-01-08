@@ -14,11 +14,11 @@ public class GenerateMap : MonoBehaviour
     [Header("Options")]
     [SerializeField] private float rate;
 
-    private float[] checkSound = new float[8];
-
     [SerializeField] private Notes notes;
     [SerializeField] private AudioSource clip;
+
     private float setTime;
+    private float[] checkSound = new float[8];
 
 
 
@@ -90,7 +90,10 @@ public class GenerateMap : MonoBehaviour
 [System.Serializable]
 public class Notes
 {
-    //public int mapID;
+    public int wallID;
+    public int visualizerID;
+    public int groundID;
+
     public List<int> id;
     public List<float> time;
     public List<Vector2> offset;

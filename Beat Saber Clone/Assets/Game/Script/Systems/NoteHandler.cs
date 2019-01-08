@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class NoteHandler : MonoBehaviour
 {
+    [SerializeField] private Environment environmentScript;
     [SerializeField] private ObjectPool[] objectPoolScript;
     [SerializeField] private Transform objSpawnLoc;
     [SerializeField] private AudioSource clip;
@@ -26,6 +27,7 @@ public class NoteHandler : MonoBehaviour
         string dataPath = "C:/Users/Gebruiker/Desktop/Songs/Data/" + clip.clip.name + ".json";
         string dataAsJson = File.ReadAllText(dataPath);
         notes = JsonUtility.FromJson<Notes>(dataAsJson);
+        environmentScript.SetOptions(notes.wallID, notes.visualizerID, notes.groundID);
     }
 
     void Update ()

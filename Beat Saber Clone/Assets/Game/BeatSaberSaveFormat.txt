@@ -1,0 +1,53 @@
+  "_version": "1.5.0",
+  "_beatsPerMinute": 105,
+  "_beatsPerBar": 16,
+  "_noteJumpSpeed": 10,
+  "_shuffle": 0,
+  "_shufflePeriod": 0.5,
+  
+
+"_notes": [
+  {
+    "_time": 2.4137499332427979,
+    "_lineIndex": 1,
+    "_lineLayer": 0,
+    "_type": 0,
+    "_cutDirection": 8
+  },
+
+
+"_events": [
+  {
+    "_time": 0.41374999284744263,
+    "_type": 0,
+    "_value": 3
+  },
+
+
+"_obstacles": [
+  {
+    "_time": 2.6637499332427979,
+    "_lineIndex": 0,
+    "_type": 0,
+    "_duration": 1.75,
+    "_width": 1
+  },
+
+types:
+0 = red
+1 = blue
+
+Note layout	(LineIndex = x, LineLayer = y)
+
+	[0,2]	[1,2]	[2,2]	[3,2]
+	[0,1]	[1,1]	[2,1]	[3,1]
+	[0,0]	[1,0]	[2,0]	[3,0]
+
+
+Direction
+
+	[4]	[0]	[5]
+
+	[2]	[8]	[3]
+
+	[6]	[1]	[7]
