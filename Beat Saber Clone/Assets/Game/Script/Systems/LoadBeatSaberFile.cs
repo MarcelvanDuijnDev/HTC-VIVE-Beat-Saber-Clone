@@ -22,9 +22,9 @@ public class LoadBeatSaberFile : MonoBehaviour
 
     private void Load()
     {
-        string dataPath = "C:/Users/Gebruiker/Desktop/Songs/Data/Easy.json";
-        string dataAsJson = File.ReadAllText(dataPath);
-        _notes = JsonUtility.FromJson<_notes>(dataAsJson);
+       // string dataPath = "C:/Users/Gebruiker/Desktop/Songs/Data/Easy.json";
+       // string dataAsJson = File.ReadAllText(dataPath);
+       // _notes = JsonUtility.FromJson<_notes>(dataAsJson);
     }
 }
 
