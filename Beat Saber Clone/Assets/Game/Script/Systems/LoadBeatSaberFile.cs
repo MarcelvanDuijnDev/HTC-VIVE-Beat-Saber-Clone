@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class LoadBeatSaberFile : MonoBehaviour
 {
-    private int[] _notes;
+    /*
+    private int[] notes;
 
 
 
@@ -22,10 +23,16 @@ public class LoadBeatSaberFile : MonoBehaviour
 
     private void Load()
     {
-       // string dataPath = "C:/Users/Gebruiker/Desktop/Songs/Data/Easy.json";
-       // string dataAsJson = File.ReadAllText(dataPath);
-       // _notes = JsonUtility.FromJson<_notes>(dataAsJson);
+        string dataPath = "C:/Users/Gebruiker/Desktop/Songs/Data/Easy.json";
+        string dataAsJson = File.ReadAllText(dataPath);
+        notes = JsonUtility.FromJson<_notes>(dataAsJson);
     }
+
+    public class _notes
+    {
+        public float _time;
+    }
+    */
 }
 
 

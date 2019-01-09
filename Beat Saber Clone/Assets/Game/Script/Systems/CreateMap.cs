@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System.IO;
 
 public class CreateMap : MonoBehaviour
 {
@@ -48,6 +49,8 @@ public class CreateMap : MonoBehaviour
     {
         SetText();
 
+
+
         if (continueMusic && !audioSource.isPlaying)
         {
             audioSource.Play();
@@ -78,6 +81,8 @@ public class CreateMap : MonoBehaviour
             {
                 gridHandler.ChangeButton(hit.transform.gameObject);
 
+                offset = new Vector2(hit.transform.position.x, hit.transform.position.y);
+
                 if(previewObj != null)
                 {
                     previewObj.transform.position = hit.transform.position;
@@ -87,14 +92,6 @@ public class CreateMap : MonoBehaviour
                 {
                     previewObjects[noteID].SetActive(true);
                     previewObj = previewObjects[noteID];
-                }
-
-                if (Input.GetKeyDown(KeyCode.O))
-                {
-                    notes.id.Add(noteID);
-                    notes.time.Add(musicTime);
-                    notes.offset.Add(new Vector2(hit.transform.position.x, hit.transform.position.y));
-                    notes.angle.Add(angle);
                 }
             }
             else
@@ -116,6 +113,16 @@ public class CreateMap : MonoBehaviour
                 gridHandler.ChangeButton1Null();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            PlaceNote(noteID, offset, musicTime, angle);
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Save();
+        }
+
 
         if (snapAngleEnable)
         {
@@ -151,6 +158,12 @@ public class CreateMap : MonoBehaviour
             uiObject.SetActive(false);
         else
             uiObject.SetActive(true);
+    }
+
+    public void Save()
+    {
+        string json = JsonUtility.ToJson(notes);
+        File.WriteAllText("C:/Users/Gebruiker/Desktop/Songs/Data/" + audioSource.clip.name + ".json", json.ToString());
     }
 
     void SetText()

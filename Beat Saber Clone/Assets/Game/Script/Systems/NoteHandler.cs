@@ -10,15 +10,19 @@ public class NoteHandler : MonoBehaviour
     [SerializeField] private Transform objSpawnLoc;
     [SerializeField] private AudioSource clip;
 
+    [SerializeField] private GameObject spawnEffectRightObj, spawnEffectLeftObj;
+    [SerializeField] private ParticleSystem spawnEffectRight, spawnEffectLeft;
+
     private Notes notes;
     private int currentNote;
 
     float timer;
 
-    
+    Mesh meshTest;
 
     void Start()
     {
+        meshTest.vertices = SmoothFilter.
         Load();
     }
 
@@ -44,6 +48,8 @@ public class NoteHandler : MonoBehaviour
         }
     }
 
+    
+
     void spawnNote(int _id, Vector2 _offset, float _rotation)
     {
         for (int i = 0; i < objectPoolScript[_id].objects.Count; i++)
@@ -55,6 +61,16 @@ public class NoteHandler : MonoBehaviour
                 objectPoolScript[_id].objects[i].SetActive(true);
                 break;
             }
+        }
+        if (_id == 0)
+        {
+            spawnEffectRightObj.transform.position = new Vector3(objSpawnLoc.position.x + _offset.x, objSpawnLoc.position.y - 0.25f + _offset.y, objSpawnLoc.position.z);
+            spawnEffectRight.Play();
+        }
+        else
+        {
+            spawnEffectLeftObj.transform.position = new Vector3(objSpawnLoc.position.x + _offset.x, objSpawnLoc.position.y - 0.25f + _offset.y, objSpawnLoc.position.z);
+            spawnEffectLeft.Play();
         }
     }
 }
