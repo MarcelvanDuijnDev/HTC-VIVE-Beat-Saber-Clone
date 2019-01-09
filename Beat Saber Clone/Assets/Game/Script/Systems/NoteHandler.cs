@@ -18,11 +18,8 @@ public class NoteHandler : MonoBehaviour
 
     float timer;
 
-    Mesh meshTest;
-
     void Start()
     {
-        meshTest.vertices = SmoothFilter.
         Load();
     }
 
