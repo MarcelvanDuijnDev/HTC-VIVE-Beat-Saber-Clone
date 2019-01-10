@@ -5,59 +5,111 @@ using UnityEngine;
 
 public class LoadBeatSaberFile : MonoBehaviour
 {
-    public ReadBeatSaberFile readBS;
-    public float timer;
-    public int currentNote;
+    [SerializeField] private float speed;
+    [SerializeField] private float audioStartTime;
+    [SerializeField] private ReadBeatSaberFile readBS;
+    [SerializeField] private float timer;
+    [SerializeField] private int currentNote;
+    [SerializeField] private float timerSpeed;
+    [SerializeField] private Transform objSpawnLoc;
 
-    public Transform objSpawnLoc;
+    private string path = "C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/" + "Expert.json";
+    private string testPath = "C:/Program Files (x86)/Steam/steamapps/common/Beat Saber/CustomSongs/testmap/Easy.json";
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ObjectPool[] objectPoolScript;
 
     void Start()
     {
+        Time.timeScale = speed;
         Load();
+        timerSpeed = (readBS._beatsPerMinute * 1000) / 60 * 0.001f;
+        Debug.Log("Timer Speed: " + timerSpeed);
     }
 
 	void Update ()
     {
-        timer += 2.5f * Time.deltaTime;
-        if(timer >= readBS._notes[currentNote]._time)
+        timer += timerSpeed * Time.deltaTime;
+        if(timer >= audioStartTime && !audioSource.isPlaying)
         {
-            float angle = 0;
-
-            switch (readBS._notes[currentNote]._cutDirection)
-            {
-                case 0:
-                    angle = 90;
-                    break;
-                case 1:
-                    angle = 270;
-                    break;
-                case 2:
-                    angle = 180;
-                    break;
-                case 3:
-                    angle = 0;
-                    break;
-                case 4:
-                    angle = 135;
-                    break;
-                case 5:
-                    angle = 45;
-                    break;
-                case 6:
-                    angle = 225;
-                    break;
-                case 7:
-                    angle = 315;
-                    break;
-            }
-
-            spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
-            currentNote += 1;
+            audioSource.Play();
         }
 
+        if (currentNote < readBS._notes.Length)
+        {
+            for (int i = 0; i < readBS._notes.Length; i++)
+            {
+                if (timer >= readBS._notes[currentNote]._time)
+                {
+                    float angle = 0;
+
+                    switch (readBS._notes[currentNote]._cutDirection)
+                    {
+                        case 0:
+                            angle = 90;
+                            break;
+                        case 1:
+                            angle = 270;
+                            break;
+                        case 2:
+                            angle = 180;
+                            break;
+                        case 3:
+                            angle = 0;
+                            break;
+                        case 4:
+                            angle = 135;
+                            break;
+                        case 5:
+                            angle = 45;
+                            break;
+                        case 6:
+                            angle = 225;
+                            break;
+                        case 7:
+                            angle = 315;
+                            break;
+                        case 8:
+                            if(readBS._notes[currentNote]._type == 0)
+                            spawnNote(2, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                            else
+                            spawnNote(3, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                            currentNote++;
+                            break;
+                    }
+                    if (readBS._notes[currentNote]._cutDirection != 8)
+                    {
+                        if(readBS._notes[currentNote]._type > 1 && readBS._notes[currentNote]._type < 1)
+                        spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                        else
+                        spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
+                        currentNote++;
+                    }
+                    else
+                    {
+                        //spawnNote(4, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
+                        //currentNote++;
+                    }
+                }
+            }
+        }
+
+
+        float audioInt = 0;
+        for (int i = 0; i < 8; i++)
+        {
+            audioInt += ReadAudioFile.bandBuffer[i];
+        }
+
+        /*
+        for (int i = 0; i < objectPoolScript.Length; i++)
+        {
+            for (int o = 0; o < objectPoolScript[i].objects.Count; o++)
+            {
+                objectPoolScript[i].objects[o].gameObject.transform.localScale = new Vector3(audioInt * 0.2f, audioInt * 0.2f, audioInt * 0.2f);
+            }
+        }
+        */
 	}
 
     void spawnNote(int _id, Vector2 _offset, float _rotation)
