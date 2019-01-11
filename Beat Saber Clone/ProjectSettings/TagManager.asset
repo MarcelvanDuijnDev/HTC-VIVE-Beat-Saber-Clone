@@ -11,6 +11,7 @@ TagManager:
   - Saber
   - Button
   - Button1
+  - Bomb
   layers:
   - Default
   - TransparentFX

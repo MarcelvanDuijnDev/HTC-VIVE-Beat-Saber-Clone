@@ -1,3 +1,9 @@
 Offset
 
-RCTTS 16
+RCTTS				16
+Caravan place 2x	8
+Believer			8
+Psy					8
+luvoratorrrry		8
+RFS					10
+Out of time			14

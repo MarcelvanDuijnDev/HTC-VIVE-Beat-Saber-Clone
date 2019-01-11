@@ -24,9 +24,9 @@ public class ReadAudioFile : MonoBehaviour
     {
         if (!audioScource.isPlaying)
         {
-            audioScource.clip = musicMapScript[mapId].audioClips[musicAmount];
-            musicAmount += 1;
-            audioScource.Play();
+            //audioScource.clip = musicMapScript[mapId].audioClips[musicAmount];
+            //musicAmount += 1;
+            //audioScource.Play();
         }
 
         GetSpectrumAudioSource();

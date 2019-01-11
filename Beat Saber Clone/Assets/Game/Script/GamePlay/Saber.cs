@@ -6,12 +6,18 @@ using Valve.VR;
 
 public class Saber : MonoBehaviour
 {
+    [Header("Set")]
     [SerializeField] private Text scoreText;
     [SerializeField] private SteamVR_Action_Vibration haptic;
     [SerializeField] private int saberID;
     [SerializeField] private ScoreHandler scoreHandlerScript;
     [SerializeField] private Transform raycastPoint;
     [SerializeField] private ParticleSystem effect;
+    [SerializeField] private ParticleSystem effectBlue;
+    [SerializeField] private ParticleSystem effectRed;
+
+    [Header("ScoreOptions")]
+    [SerializeField] private float hitAngle;
 
     public SteamVR_Behaviour_Pose pose;
 
@@ -22,12 +28,11 @@ public class Saber : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit hit;
-        if (Physics.Raycast(raycastPoint.position, transform.TransformDirection(Vector3.forward), out hit, 1))
+        if (Physics.Raycast(raycastPoint.position, raycastPoint.TransformDirection(Vector3.forward), out hit, 1))
         {
-            Debug.DrawRay(raycastPoint.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(raycastPoint.position, raycastPoint.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             if (hit.transform.gameObject.CompareTag("Right") && saberID == 0)
             {
-                effect.Play();
                 rot = (new Vector3(hit.point.x,hit.point.y,hit.transform.position.z) - hit.transform.position).normalized;
                 Vector3 rotCalc = Quaternion.LookRotation(rot).ToEuler();
 
@@ -48,6 +53,11 @@ public class Saber : MonoBehaviour
                     rotZ = (-90 * rot.x) + 270;
                 }
                 //obj.transform.eulerAngles = new Vector3(0, 0, -rotZ);
+                effect.transform.eulerAngles = new Vector3(0, 0, 0);
+                effect.Play();
+                effectBlue.transform.eulerAngles = new Vector3(0, rotZ, 0);
+                effectBlue.transform.position = hit.point;
+                effectBlue.Play();
 
                 hit.transform.gameObject.SetActive(false);
                 haptic.Execute(0, 0.3f, 60, 1f, SteamVR_Input_Sources.RightHand);
@@ -96,10 +106,20 @@ public class Saber : MonoBehaviour
                     rotZ = (-90 * rot.x) + 270;
                 }
                 //obj.transform.eulerAngles = new Vector3(0, 0, -rotZ);
+                effect.transform.eulerAngles = new Vector3(0, 0, 0);
+                effect.Play();
+                effectRed.transform.eulerAngles = new Vector3(0, rotZ, 0);
+                effectRed.transform.position = hit.point;
+                effectRed.Play();
 
                 scoreHandlerScript.AddScore(100);
                 hit.transform.gameObject.SetActive(false);
                 haptic.Execute(0, 0.3f, 60, 1f, SteamVR_Input_Sources.LeftHand);
+            }
+
+            if(hit.transform.gameObject.CompareTag("Bomb"))
+            {
+                //Lose combo + get damage
             }
         }
     }

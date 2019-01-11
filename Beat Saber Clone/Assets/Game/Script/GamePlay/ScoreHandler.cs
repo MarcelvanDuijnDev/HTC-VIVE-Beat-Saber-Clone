@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
-    private float score = 0;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text comboText;
     [SerializeField] private Text multiplyText;
 
+    private float score = 0;
     private float combo = 0;
     private float multiply = 0;
     private int hitsToMultiply = 4;

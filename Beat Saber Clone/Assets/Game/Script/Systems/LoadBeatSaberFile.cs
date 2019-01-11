@@ -9,7 +9,6 @@ public class LoadBeatSaberFile : MonoBehaviour
     [SerializeField] private float audioStartTime;
     [SerializeField] private ReadBeatSaberFile readBS;
     [SerializeField] private float timer;
-    [SerializeField] private int currentNote;
     [SerializeField] private float timerSpeed;
     [SerializeField] private Transform objSpawnLoc;
 
@@ -19,20 +18,26 @@ public class LoadBeatSaberFile : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ObjectPool[] objectPoolScript;
 
+    private bool pauze;
+    private int currentNote;
+    private int currentObstacle;
+
     void Start()
     {
         Time.timeScale = speed;
         Load();
         timerSpeed = (readBS._beatsPerMinute * 1000) / 60 * 0.001f;
-        Debug.Log("Timer Speed: " + timerSpeed);
     }
 
-	void Update ()
+    void Update()
     {
-        timer += timerSpeed * Time.deltaTime;
-        if(timer >= audioStartTime && !audioSource.isPlaying)
+        if (!pauze)
         {
-            audioSource.Play();
+            timer += timerSpeed * Time.deltaTime;
+            if (timer >= audioStartTime && !audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
 
         if (currentNote < readBS._notes.Length)
@@ -70,19 +75,19 @@ public class LoadBeatSaberFile : MonoBehaviour
                             angle = 315;
                             break;
                         case 8:
-                            if(readBS._notes[currentNote]._type == 0)
-                            spawnNote(2, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                            if (readBS._notes[currentNote]._type == 0)
+                                spawnNote(2, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
                             else
-                            spawnNote(3, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                                spawnNote(3, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
                             currentNote++;
                             break;
                     }
                     if (readBS._notes[currentNote]._cutDirection != 8)
                     {
-                        if(readBS._notes[currentNote]._type > 1 && readBS._notes[currentNote]._type < 1)
-                        spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                        if (readBS._notes[currentNote]._type > 1 && readBS._notes[currentNote]._type < 1)
+                            spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
                         else
-                        spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
+                            spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
                         currentNote++;
                     }
                     else
@@ -94,14 +99,25 @@ public class LoadBeatSaberFile : MonoBehaviour
             }
         }
 
+        if (currentObstacle < readBS._obstacles.Length)
+        {
+            for (int i = 0; i < readBS._obstacles.Length; i++)
+            {
+                if (timer >= readBS._notes[currentObstacle]._time)
+                {
+                    //spawnObstacle(readBS._obstacles[i]._lineIndex, readBS._obstacles[i]._duration, readBS._obstacles[i]._width);
+                    currentObstacle++;
+                }
+            }
+        }
 
+        /*
         float audioInt = 0;
         for (int i = 0; i < 8; i++)
         {
             audioInt += ReadAudioFile.bandBuffer[i];
         }
 
-        /*
         for (int i = 0; i < objectPoolScript.Length; i++)
         {
             for (int o = 0; o < objectPoolScript[i].objects.Count; o++)
@@ -110,7 +126,7 @@ public class LoadBeatSaberFile : MonoBehaviour
             }
         }
         */
-	}
+    }
 
     void spawnNote(int _id, Vector2 _offset, float _rotation)
     {
@@ -126,11 +142,31 @@ public class LoadBeatSaberFile : MonoBehaviour
         }
     }
 
+    void spawnObstacle(float _offset, float _duration, float _width)
+    {
+        for (int i = 0; i < objectPoolScript[5].objects.Count; i++)
+        {
+            if (!objectPoolScript[5].objects[i].activeInHierarchy)
+            {
+                objectPoolScript[5].objects[i].transform.position = new Vector3(objSpawnLoc.position.x + _offset, objSpawnLoc.position.y, objSpawnLoc.position.z);
+                objectPoolScript[5].objects[i].transform.rotation = Quaternion.Euler(0, 0, 0);
+                objectPoolScript[5].objects[i].transform.localScale = new Vector3(_width * 0.5f,2,_duration / timerSpeed);
+                objectPoolScript[5].objects[i].SetActive(true);
+                break;
+            }
+        }
+    }
+
     private void Load()
     {
         string dataPath = "C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/" + audioSource.clip.name + "Expert.json";
         string dataAsJson = File.ReadAllText(dataPath);
         readBS = JsonUtility.FromJson<ReadBeatSaberFile>(dataAsJson);
+    }
+
+    public void Pauze(bool _pauze)
+    {
+        pauze = _pauze;
     }
     
 }
