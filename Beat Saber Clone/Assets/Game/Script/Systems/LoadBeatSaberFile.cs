@@ -162,7 +162,7 @@ public class LoadBeatSaberFile : MonoBehaviour
 
     private void Load()
     {
-        string dataPath = "C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/" + audioSource.clip.name + "Expert.json";
+        string dataPath = "C:/Users/ComputerGebruiker/Desktop/Songs/DataBeatSaber/" + audioSource.clip.name + "Expert.json";
         string dataAsJson = File.ReadAllText(dataPath);
         readBS = JsonUtility.FromJson<ReadBeatSaberFile>(dataAsJson);
     }
