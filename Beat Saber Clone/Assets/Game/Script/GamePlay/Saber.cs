@@ -28,9 +28,9 @@ public class Saber : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit hit;
-        if (Physics.Raycast(raycastPoint.position, raycastPoint.TransformDirection(Vector3.forward), out hit, 1))
+        if (Physics.Raycast(raycastPoint.position, raycastPoint.TransformDirection(-Vector3.forward), out hit, 1))
         {
-            Debug.DrawRay(raycastPoint.position, raycastPoint.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            Debug.DrawRay(raycastPoint.position, raycastPoint.TransformDirection(-Vector3.forward) * hit.distance, Color.yellow);
             if (hit.transform.gameObject.CompareTag("Right") && saberID == 0)
             {
                 rot = (new Vector3(hit.point.x,hit.point.y,hit.transform.position.z) - hit.transform.position).normalized;

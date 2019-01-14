@@ -29,7 +29,7 @@ public class LoadBeatSaberFile : MonoBehaviour
         timerSpeed = (readBS._beatsPerMinute * 1000) / 60 * 0.001f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!pauze)
         {
@@ -77,23 +77,26 @@ public class LoadBeatSaberFile : MonoBehaviour
                         case 8:
                             if (readBS._notes[currentNote]._type == 0)
                                 spawnNote(2, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
-                            else
+                            else if(readBS._notes[currentNote]._type == 1)
                                 spawnNote(3, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
                             currentNote++;
                             break;
                     }
-                    if (readBS._notes[currentNote]._cutDirection != 8)
+                    if (readBS._notes[currentNote]._cutDirection != 8 && readBS._notes[currentNote]._type == 0 || readBS._notes[currentNote]._type == 1)
                     {
-                        if (readBS._notes[currentNote]._type > 1 && readBS._notes[currentNote]._type < 1)
-                            spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
-                        else
-                            spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
+                        spawnNote(readBS._notes[currentNote]._type, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
                         currentNote++;
                     }
-                    else
+                }
+            }
+            for (int i = 0; i < readBS._notes.Length; i++)
+            {
+                if (timer >= readBS._notes[currentNote]._time)
+                { 
+                    if (readBS._notes[currentNote]._type == 3)
                     {
-                        //spawnNote(4, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), angle);
-                        //currentNote++;
+                        spawnNote(4, new Vector2(readBS._notes[currentNote]._lineIndex * 0.5f, readBS._notes[currentNote]._lineLayer * 0.5f), 0);
+                        currentNote++;
                     }
                 }
             }

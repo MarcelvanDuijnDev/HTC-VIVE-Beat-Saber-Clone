@@ -17,15 +17,16 @@ public class Menu : MonoBehaviour
 
     private int currentSong;
 
+    private string path = "D:/Games/steam/steamapps/common/Beat Saber/CustomSongs/21-4/Bassdrop Freaks/";
+    //"C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/"
 
-	void Start ()
+    void Start ()
     {
-        DirectoryInfo dir = new DirectoryInfo("C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/");
+        DirectoryInfo dir = new DirectoryInfo(path);
         int count = dir.GetFiles().Length;
         buttons = new Button[count];
-        songnames = new string[count];
         int o = 0;
-        foreach (string file in System.IO.Directory.GetFiles("C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/"))
+        foreach (string file in Directory.GetFiles(path))
         {
             songnames[o] = file;
             o++;
@@ -33,7 +34,7 @@ public class Menu : MonoBehaviour
 
         for (int i = 0; i < songnamesText.Length; i++)
         {
-            songnamesText[i].text = songnames[i];
+            //songnamesText[i].text = songnames[i];
         }
         Debug.Log(count);
     }
