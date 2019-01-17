@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 56487176}
   - component: {fileID: 56487179}
   - component: {fileID: 56487180}
+  - component: {fileID: 56487181}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -421,6 +422,25 @@ MonoBehaviour:
   - {fileID: 612849234}
   - {fileID: 256497391}
   songnames: []
+  images:
+  - {fileID: 990118908}
+  - {fileID: 718844018}
+  - {fileID: 1896677861}
+  - {fileID: 1348027732}
+  - {fileID: 1556665494}
+  - {fileID: 2097194725}
+  url: D:/Games/steam/steamapps/common/Beat Saber/CustomSongs/15-1/me and u/cover.jpg
+--- !u!114 &56487181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56487173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5722bc6ca07171d4fa78b4674dca460f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &72945827
 Prefab:
   m_ObjectHideFlags: 0
@@ -1160,7 +1180,6 @@ GameObject:
   - component: {fileID: 279854373}
   - component: {fileID: 279854376}
   - component: {fileID: 279854375}
-  - component: {fileID: 279854374}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -1181,18 +1200,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &279854374
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 279854372}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &279854375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7049,7 +7056,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: edaa4b1b2b10a534b8312eb371757095, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -7219,7 +7226,6 @@ GameObject:
   - component: {fileID: 741024080}
   - component: {fileID: 741024083}
   - component: {fileID: 741024082}
-  - component: {fileID: 741024081}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -7240,18 +7246,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &741024081
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 741024079}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &741024082
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7644,7 +7638,6 @@ GameObject:
   - component: {fileID: 816622563}
   - component: {fileID: 816622566}
   - component: {fileID: 816622565}
-  - component: {fileID: 816622564}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -7665,18 +7658,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &816622564
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 816622562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &816622565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7729,7 +7710,6 @@ GameObject:
   - component: {fileID: 821321549}
   - component: {fileID: 821321552}
   - component: {fileID: 821321551}
-  - component: {fileID: 821321550}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -7750,18 +7730,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &821321550
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 821321548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &821321551
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8426,7 +8394,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 5cf9932f7f392e24da14625543d31c5f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -8917,7 +8885,6 @@ GameObject:
   - component: {fileID: 1168125935}
   - component: {fileID: 1168125938}
   - component: {fileID: 1168125937}
-  - component: {fileID: 1168125936}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -8938,18 +8905,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1168125936
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1168125934}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1168125937
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9535,7 +9490,6 @@ GameObject:
   - component: {fileID: 1241774853}
   - component: {fileID: 1241774856}
   - component: {fileID: 1241774855}
-  - component: {fileID: 1241774854}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -9556,18 +9510,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1241774854
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1241774852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1241774855
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9945,7 +9887,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 33a37bfcc100a184d81d8920b98fc160, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -9978,7 +9920,6 @@ GameObject:
   - component: {fileID: 1359670267}
   - component: {fileID: 1359670270}
   - component: {fileID: 1359670269}
-  - component: {fileID: 1359670268}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -9999,18 +9940,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1359670268
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1359670266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1359670269
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10792,7 +10721,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 45ca59aa3facc824e97edd70e0432ef2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -10869,7 +10798,6 @@ GameObject:
   - component: {fileID: 1563919622}
   - component: {fileID: 1563919625}
   - component: {fileID: 1563919624}
-  - component: {fileID: 1563919623}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -10890,18 +10818,6 @@ Transform:
   m_Father: {fileID: 1949773127}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1563919623
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1563919621}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1563919624
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11813,7 +11729,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 08c95ce251029564991dc2dbc503219c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -12216,7 +12132,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 66fd36bbcb535694fbb50a06b2e15645, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -12771,7 +12687,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a5e5a361da5c844ba1da3bd9915fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabGameObject: {fileID: 1373791678301142, guid: ae631961b2c4e974eb7bc64456734d39,
-    type: 2}
+  prefabGameObject: {fileID: 0}
   pooledAmount: 300
   objects: []

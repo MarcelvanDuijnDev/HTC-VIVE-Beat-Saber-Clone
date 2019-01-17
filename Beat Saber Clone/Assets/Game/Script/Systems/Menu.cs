@@ -15,28 +15,28 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private string[] songnames;
 
+    [SerializeField] private Image[] images;
+
     private int currentSong;
 
     private string path = "D:/Games/steam/steamapps/common/Beat Saber/CustomSongs/21-4/Bassdrop Freaks/";
     //"C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/"
 
-    void Start ()
-    {
-        DirectoryInfo dir = new DirectoryInfo(path);
-        int count = dir.GetFiles().Length;
-        buttons = new Button[count];
-        int o = 0;
-        foreach (string file in Directory.GetFiles(path))
-        {
-            songnames[o] = file;
-            o++;
-        }
+    public string url = "D:/Games/steam/steamapps/common/Beat Saber/CustomSongs/15-1/me and u/cover.jpg";
 
-        for (int i = 0; i < songnamesText.Length; i++)
+    IEnumerator Start()
+    {
+        Texture2D tex;
+        tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+        using (WWW www = new WWW(url))
         {
-            //songnamesText[i].text = songnames[i];
+            yield return www;
+            www.LoadImageIntoTexture(tex);
+            for (int i = 0; i < images.Length; i++)
+            {
+                images[i].GetComponent<Image>().material.mainTexture = tex;
+            }
         }
-        Debug.Log(count);
     }
 	
 	void Update ()
