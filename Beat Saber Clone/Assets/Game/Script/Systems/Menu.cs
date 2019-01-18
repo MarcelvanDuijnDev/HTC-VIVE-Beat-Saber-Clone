@@ -19,10 +19,10 @@ public class Menu : MonoBehaviour
 
     private int currentSong;
 
-    private string path = "D:/Games/steam/steamapps/common/Beat Saber/CustomSongs/21-4/Bassdrop Freaks/";
+    //private string path = "C:/Users/Computergebruiker/Desktop/Beat Saber";
     //"C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/"
 
-    public string url = "D:/Games/steam/steamapps/common/Beat Saber/CustomSongs/15-1/me and u/cover.jpg";
+    public string url;
 
     IEnumerator Start()
     {

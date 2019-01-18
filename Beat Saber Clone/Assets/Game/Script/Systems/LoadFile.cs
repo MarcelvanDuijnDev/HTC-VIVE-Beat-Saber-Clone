@@ -5,33 +5,47 @@ using UnityEngine;
 
 public class LoadFile : MonoBehaviour
 {
-    string beatsaberPath = "D:/Games/steam/steamapps/common/Beat Saber"; //"C:/Users/Computergebruiker/Desktop/Beat Saber";
+    string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber"; //"D:/Games/steam/steamapps/common/Beat Saber";
 
     string[] songnames;
     string[] songpath;
     string[] songpath2;
+    GetSongs[] getSongs;
     Songs[] songs;
 
     void Start ()
     {
-        songs = new Songs[Directory.GetDirectories(beatsaberPath + "/CustomSongs").Length];
+        getSongs = new GetSongs[Directory.GetDirectories(beatsaberPath + "/CustomSongs").Length -1];
+
         songpath = Directory.GetDirectories(beatsaberPath + "/CustomSongs");
 
-        for (int i = 0; i < songpath.Length; i++)
+        getSongs[i].songs = new string[getSongs.Length];
+
+        Debug.Log(songpath.Length);
+
+        for (int i = 1; i < getSongs.Length; i++)
         {
-            songpath2 = Directory.GetDirectories(songpath[i]);
+            Debug.Log(songpath[i]);
+            getSongs[i].songs = Directory.GetDirectories(songpath[i]);
+            for (int o = 0; o < Directory.GetDirectories(getSongs[i].songs[0]).Length; o++)
+            {
+                songs[i].songname = Directory.GetDirectories(getSongs[i].songs[o]);
+            }
         }
 
-        for (int i = 0; i < songpath2.Length; i++)
+        for (int i = 1; i < getSongs.Length; i++)
         {
-            Debug.Log(songpath2[i]);
+            for (int o = 0; o < songs[i].songname.Length; o++)
+            {
+                Debug.Log(songs[i].songname[o]);
+            }
         }
 
         songnames = new string[songpath.Length];
-        for (int i = 1; i < songnames.Length; i++)
+        for (int i = 1; i < songpath.Length; i++)
         {
-            //songs[i].songname = Directory.GetDirectories(songpath[i]);
-            Debug.Log(songpath[i]);
+            songs[i].songname = Directory.GetDirectories(songpath2[i]);
+            //Debug.Log(songs[i]);
             //Debug.Log(songs[i].songname[i]);
         }
 
@@ -44,6 +58,11 @@ public class LoadFile : MonoBehaviour
     {
 		
 	}
+}
+
+public class GetSongs
+{
+    public string[] songs;
 }
 
 public class Songs
