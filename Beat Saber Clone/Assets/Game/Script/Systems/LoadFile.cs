@@ -5,67 +5,90 @@ using UnityEngine;
 
 public class LoadFile : MonoBehaviour
 {
-    string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber"; //"D:/Games/steam/steamapps/common/Beat Saber";
+    //string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber";
+    string beatsaberPath = "D:/Games/steam/steamapps/common/Beat Saber";
+    [SerializeField] private Info readInfo;
 
-    string[] songnames;
+    public List<string> difficulties;
+    public List<string> songNames;
+    public List<string> authorName;
+    public List<string> songnamesPath;
+    public List<string> songImagePath;
+    public List<string> songAudioPath;
     string[] songpath;
-    string[] songpath2;
-    GetSongs[] getSongs;
-    Songs[] songs;
 
     void Start ()
     {
-        getSongs = new GetSongs[Directory.GetDirectories(beatsaberPath + "/CustomSongs").Length -1];
-
         songpath = Directory.GetDirectories(beatsaberPath + "/CustomSongs");
 
-        getSongs[i].songs = new string[getSongs.Length];
-
-        Debug.Log(songpath.Length);
-
-        for (int i = 1; i < getSongs.Length; i++)
-        {
-            Debug.Log(songpath[i]);
-            getSongs[i].songs = Directory.GetDirectories(songpath[i]);
-            for (int o = 0; o < Directory.GetDirectories(getSongs[i].songs[0]).Length; o++)
-            {
-                songs[i].songname = Directory.GetDirectories(getSongs[i].songs[o]);
-            }
-        }
-
-        for (int i = 1; i < getSongs.Length; i++)
-        {
-            for (int o = 0; o < songs[i].songname.Length; o++)
-            {
-                Debug.Log(songs[i].songname[o]);
-            }
-        }
-
-        songnames = new string[songpath.Length];
         for (int i = 1; i < songpath.Length; i++)
         {
-            songs[i].songname = Directory.GetDirectories(songpath2[i]);
-            //Debug.Log(songs[i]);
-            //Debug.Log(songs[i].songname[i]);
+            try
+            {
+                string[] getnames = Directory.GetDirectories(songpath[i]);
+                songnamesPath.Add(getnames[0]);
+            }
+            catch
+            {
+                Debug.Log("Failed");
+            }
         }
 
-        Debug.Log("/CustomSongs: " + Directory.GetDirectories(beatsaberPath + "/CustomSongs").Length);
+        for (int i = 0; i < songnamesPath.Count; i++)
+        {
+            Load(songnamesPath[i] + "/info.json");
+            songNames.Add(readInfo.songName);
+            authorName.Add(readInfo.authorName);
+            songImagePath.Add(songnamesPath[i] + "/" + readInfo.coverImagePath);
+            songAudioPath.Add(songnamesPath[i] + "/" + readInfo.difficultyLevels[0].audioPath);
 
-
+            string dif = "";
+            for (int o = 0; o < readInfo.difficultyLevels.Length; o++)
+            {
+                if (readInfo.difficultyLevels[o].difficulty == "Easy")
+                    dif += "a";
+                if (readInfo.difficultyLevels[o].difficulty == "Normal")
+                    dif += "b";
+                if (readInfo.difficultyLevels[o].difficulty == "Hard")
+                    dif += "c";
+                if (readInfo.difficultyLevels[o].difficulty == "Expert")
+                    dif += "d";
+                if (readInfo.difficultyLevels[o].difficulty == "ExpertPlus")
+                    dif += "e";
+            }
+            difficulties.Add(dif);
+        }
     }
 
-    void Update ()
+    private void Load(string _path)
     {
-		
-	}
+        string dataPath = _path;
+        string dataAsJson = File.ReadAllText(dataPath);
+        readInfo = JsonUtility.FromJson<Info>(dataAsJson);
+    }
 }
 
-public class GetSongs
+[System.Serializable]
+public class Info
 {
-    public string[] songs;
+    public string songName;
+    public string songSubName;
+    public string authorName;
+    public int beatsPerMinute;
+    public int previewStartTime;
+    public int previewDuration;
+    public string coverImagePath;
+    public string environmentName;
+    public _DifficultyLevels[] difficultyLevels;
 }
 
-public class Songs
+[System.Serializable]
+public class _DifficultyLevels
 {
-    public string[] songname;
+    public string difficulty;
+    public int difficultyRank;
+    public string audioPath;
+    public string jsonPath;
+    public int offset;
+    public int oldOffset;
 }
