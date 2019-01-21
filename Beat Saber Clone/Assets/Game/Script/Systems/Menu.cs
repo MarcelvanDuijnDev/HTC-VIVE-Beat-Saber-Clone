@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
+    #region Variables
     [Header("Set Script")]
     [SerializeField] private LoadFile loadFileScript;
     [SerializeField] private AudioSource audioSource;
@@ -40,10 +41,20 @@ public class Menu : MonoBehaviour
     [Header("Difficulty")]
     [SerializeField] private Button[] difficultyButtons;
 
+    [Header("CanvasOBJ")]
+    [SerializeField] private GameObject menuObj;
+    [SerializeField] private GameObject gameObj;
+
     private bool loaded;
+    private int selectedSongID;
+    private bool inMenu;
+
+    [SerializeField] private LoadBeatSaberFile loadBSFile;
+    #endregion
 
     void Start()
     {
+        inMenu = true;
         songnames = loadFileScript.songNames;
         songAuthor = loadFileScript.authorName;
         songImagePath = loadFileScript.songImagePath;
@@ -52,17 +63,20 @@ public class Menu : MonoBehaviour
 
         selectedSongText.text = "Menu";
         selectedSongAuthorText.text = "";
+        CheckButtons();
     }
 
     public void NextSong()
     {
         currentSong += 6;
+        CheckButtons();
         StartCoroutine(UpdateSongs());
         UpdateSongText();
     }
     public void PreviousSong()
     {
         currentSong -= 6;
+        CheckButtons();
         StartCoroutine(UpdateSongs());
         UpdateSongText();
     }
@@ -72,9 +86,12 @@ public class Menu : MonoBehaviour
         int textID = 0;
         for (int i = currentSong; i < currentSong +6; i++)
         {
-            songnamesText[textID].text = songnames[i];
-            songAuthorText[textID].text = songAuthor[i];
-            textID++;
+            if (i < songnames.Count)
+            {
+                songnamesText[textID].text = songnames[i];
+                songAuthorText[textID].text = songAuthor[i];
+                textID++;
+            }
         }
         currentSongIDText.text = currentSong.ToString() + "/" + songnames.Count.ToString();
     }
@@ -82,28 +99,35 @@ public class Menu : MonoBehaviour
     IEnumerator UpdateSongs()
     {
         int imageID = 0;
-        for (int i = currentSong; i < currentSong +6; i++)
+        for (int i = currentSong; i < currentSong + 6; i++)
         {
-            Texture2D tex;
-            tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
-            using (WWW www = new WWW(songImagePath[i]))
+            if (i < songnames.Count)
             {
-                www.LoadImageIntoTexture(tex);
-                images[imageID].GetComponent<Image>().material.mainTexture = tex;
-                
-                yield return www;
+                Texture2D tex;
+                tex = new Texture2D(4, 4, TextureFormat.DXT1, false);
+                using (WWW www = new WWW(songImagePath[i]))
+                {
+                    www.LoadImageIntoTexture(tex);
+                    images[imageID].GetComponent<Image>().material.mainTexture = tex;
+
+                    yield return www;
+                }
+                imageID++;
             }
-            imageID++;
         }
         for (int i = 0; i < buttons.Length; i++)
         {
-            buttons[i].transform.gameObject.SetActive(false);
-            buttons[i].transform.gameObject.SetActive(true);
+            if (i < songnames.Count)
+            {
+                buttons[i].transform.gameObject.SetActive(false);
+                buttons[i].transform.gameObject.SetActive(true);
+            }
         }
     }
 
     public void LoadAudioButton(int _ID1)
     {
+        selectedSongID = currentSong + _ID1;
         StartCoroutine(LoadAudio(currentSong + _ID1));
         selectedSongText.text = songnames[currentSong + _ID1];
         selectedSongAuthorText.text = songAuthor[currentSong + _ID1];
@@ -137,20 +161,39 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        if(audioSource.clip != null)
-        if (!audioSource.isPlaying && audioSource.clip.isReadyToPlay)
-            audioSource.Play();
-
-        float songduration = audioSource.clip.length;
-
-        string timerString = string.Format("{0:00}:{1:00}:{2:00}", Mathf.Floor(songduration / 3600), Mathf.Floor((songduration / 60) % 60), songduration % 60);
-        songDuration.text = timerString;
-
-        if (!loaded)
+        if (inMenu)
         {
-            StartCoroutine(UpdateSongs());
-            UpdateSongText();
-            loaded = true;
+            if (audioSource.clip != null)
+                if (!audioSource.isPlaying && audioSource.clip.isReadyToPlay)
+                    audioSource.Play();
+
+            float songduration = audioSource.clip.length;
+
+            string timerString = string.Format("{0:00}:{1:00}:{2:00}", Mathf.Floor(songduration / 3600), Mathf.Floor((songduration / 60) % 60), songduration % 60);
+            songDuration.text = timerString;
+
+            if (!loaded)
+            {
+                StartCoroutine(UpdateSongs());
+                UpdateSongText();
+                loaded = true;
+            }
+
+            menuObj.SetActive(true);
+            gameObj.SetActive(false);
+        }
+        else
+        {
+            menuObj.SetActive(false);
+            gameObj.SetActive(true);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            inMenu = true;
+            menuObj.SetActive(true);
+            gameObj.SetActive(false);
         }
     }
 
@@ -180,6 +223,57 @@ public class Menu : MonoBehaviour
             difficultyButtons[4].transform.gameObject.SetActive(true);
         else
             difficultyButtons[4].transform.gameObject.SetActive(false);
+    }
+
+    void CheckButtons()
+    {
+        if (currentSong == 0)
+        {
+            previousSongs.transform.gameObject.SetActive(false);
+        }
+        else
+        {
+            previousSongs.transform.gameObject.SetActive(true);
+        }
+
+        int o = 0;
+        for (int i = currentSong; i < currentSong + 6; i++)
+        {
+            if(i < currentSong + 6)
+            {
+                buttons[o].transform.gameObject.SetActive(true);
+            }
+            else
+            {
+                buttons[o].transform.gameObject.SetActive(false);
+            }
+            o++;
+        }
+    }
+
+    public void ClickDifficulty(int _difID)
+    {
+        audioSource.Play();
+        string getPath = loadFileScript.songnamesPath[selectedSongID] + "/";
+        if (_difID == 0)
+            getPath += "easy.json";
+        if (_difID == 1)
+            getPath += "normal.json";
+        if (_difID == 2)
+            getPath += "hard.json";
+        if (_difID == 3)
+            getPath += "expert.json";
+        if (_difID == 4)
+            getPath += "expertplus.json";
+        inMenu = false;
+
+        StartCoroutine(LoadAudio(selectedSongID));
+        selectedSongText.text = songnames[selectedSongID];
+        selectedSongAuthorText.text = songAuthor[selectedSongID];
+        StartCoroutine(SetSelectedImage(selectedSongID));
+        Difficulty(selectedSongID);
+
+        loadBSFile.Load(getPath);
     }
 
 }

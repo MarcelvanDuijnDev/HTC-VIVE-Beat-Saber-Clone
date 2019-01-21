@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LoadFile : MonoBehaviour
 {
-    //string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber";
-    string beatsaberPath = "D:/Games/steam/steamapps/common/Beat Saber";
+    string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber";
+    //string beatsaberPath = "D:/Games/steam/steamapps/common/Beat Saber";
     [SerializeField] private Info readInfo;
 
     public List<string> difficulties;

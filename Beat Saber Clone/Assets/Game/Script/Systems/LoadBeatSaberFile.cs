@@ -12,21 +12,18 @@ public class LoadBeatSaberFile : MonoBehaviour
     [SerializeField] private float timerSpeed;
     [SerializeField] private Transform objSpawnLoc;
 
-    private string path = "C:/Users/Gebruiker/Desktop/Songs/DataBeatSaber/" + "Expert.json";
-    private string testPath = "C:/Program Files (x86)/Steam/steamapps/common/Beat Saber/CustomSongs/testmap/Easy.json";
-
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ObjectPool[] objectPoolScript;
 
     private bool pauze;
     private int currentNote;
     private int currentObstacle;
+    bool check = false;
 
     void Start()
     {
+        pauze = true;
         Time.timeScale = speed;
-        Load();
-        timerSpeed = (readBS._beatsPerMinute * 1000) / 60 * 0.001f;
     }
 
     void FixedUpdate()
@@ -34,10 +31,8 @@ public class LoadBeatSaberFile : MonoBehaviour
         if (!pauze)
         {
             timer += timerSpeed * Time.deltaTime;
-            if (timer >= audioStartTime && !audioSource.isPlaying)
-            {
+            if (timer >= audioStartTime && !audioSource.isPlaying && audioSource.clip.isReadyToPlay)
                 audioSource.Play();
-            }
         }
 
         if (currentNote < readBS._notes.Length)
@@ -113,22 +108,24 @@ public class LoadBeatSaberFile : MonoBehaviour
                 }
             }
         }
+    }
 
-        /*
-        float audioInt = 0;
-        for (int i = 0; i < 8; i++)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            audioInt += ReadAudioFile.bandBuffer[i];
-        }
-
-        for (int i = 0; i < objectPoolScript.Length; i++)
-        {
-            for (int o = 0; o < objectPoolScript[i].objects.Count; o++)
+            timer = 0;
+            timerSpeed = 0;
+            currentNote = 0;
+            currentObstacle = 0;
+            for (int i = 0; i < objectPoolScript.Length; i++)
             {
-                objectPoolScript[i].objects[o].gameObject.transform.localScale = new Vector3(audioInt * 0.2f, audioInt * 0.2f, audioInt * 0.2f);
+                for (int o = 0; o < objectPoolScript[i].objects.Count; o++)
+                {
+                    objectPoolScript[i].objects[o].SetActive(false);
+                }
             }
         }
-        */
     }
 
     void spawnNote(int _id, Vector2 _offset, float _rotation)
@@ -160,11 +157,13 @@ public class LoadBeatSaberFile : MonoBehaviour
         }
     }
 
-    private void Load()
+    public void Load(string _path)
     {
-        string dataPath = "C:/Users/ComputerGebruiker/Desktop/Songs/DataBeatSaber/" + audioSource.clip.name + "Expert.json";
+        string dataPath = _path;
         string dataAsJson = File.ReadAllText(dataPath);
         readBS = JsonUtility.FromJson<ReadBeatSaberFile>(dataAsJson);
+        pauze = false;
+        timerSpeed = (readBS._beatsPerMinute * 1000) / 60 * 0.001f;
     }
 
     public void Pauze(bool _pauze)
