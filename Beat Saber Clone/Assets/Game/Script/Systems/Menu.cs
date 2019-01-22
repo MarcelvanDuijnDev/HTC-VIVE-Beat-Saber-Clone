@@ -61,8 +61,8 @@ public class Menu : MonoBehaviour
         songAudioPath = loadFileScript.songAudioPath;
         songDifficulties = loadFileScript.difficulties;
 
-        selectedSongText.text = "Menu";
-        selectedSongAuthorText.text = "";
+        selectedSongText.text = audioSource.clip.name;
+        selectedSongAuthorText.text = "Joji";
         CheckButtons();
     }
 
@@ -123,6 +123,7 @@ public class Menu : MonoBehaviour
                 buttons[i].transform.gameObject.SetActive(true);
             }
         }
+        CheckButtons();
     }
 
     public void LoadAudioButton(int _ID1)
@@ -239,7 +240,7 @@ public class Menu : MonoBehaviour
         int o = 0;
         for (int i = currentSong; i < currentSong + 6; i++)
         {
-            if(i < currentSong + 6)
+            if(i < songnames.Count)
             {
                 buttons[o].transform.gameObject.SetActive(true);
             }
@@ -273,7 +274,7 @@ public class Menu : MonoBehaviour
         StartCoroutine(SetSelectedImage(selectedSongID));
         Difficulty(selectedSongID);
 
-        loadBSFile.Load(getPath);
+        loadBSFile.Load(getPath, loadFileScript.songOffset[selectedSongID]);
     }
 
 }

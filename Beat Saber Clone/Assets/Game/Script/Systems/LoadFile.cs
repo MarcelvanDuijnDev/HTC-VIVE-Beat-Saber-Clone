@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class LoadFile : MonoBehaviour
 {
-    string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber";
-    //string beatsaberPath = "D:/Games/steam/steamapps/common/Beat Saber";
+    //string beatsaberPath = "C:/Users/Computergebruiker/Desktop/Beat Saber";
+    string beatsaberPath = "D:/Games/steam/steamapps/common/Beat Saber";
     [SerializeField] private Info readInfo;
 
     public List<string> difficulties;
@@ -15,6 +15,7 @@ public class LoadFile : MonoBehaviour
     public List<string> songnamesPath;
     public List<string> songImagePath;
     public List<string> songAudioPath;
+    public List<float> songOffset;
     string[] songpath;
 
     void Start ()
@@ -41,6 +42,7 @@ public class LoadFile : MonoBehaviour
             authorName.Add(readInfo.authorName);
             songImagePath.Add(songnamesPath[i] + "/" + readInfo.coverImagePath);
             songAudioPath.Add(songnamesPath[i] + "/" + readInfo.difficultyLevels[0].audioPath);
+            songOffset.Add(0);  //Get offset
 
             string dif = "";
             for (int o = 0; o < readInfo.difficultyLevels.Length; o++)

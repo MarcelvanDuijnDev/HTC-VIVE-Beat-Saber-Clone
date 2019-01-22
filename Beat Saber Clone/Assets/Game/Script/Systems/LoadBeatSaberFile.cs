@@ -157,8 +157,9 @@ public class LoadBeatSaberFile : MonoBehaviour
         }
     }
 
-    public void Load(string _path)
+    public void Load(string _path, float _offset)
     {
+        audioStartTime = _offset;
         string dataPath = _path;
         string dataAsJson = File.ReadAllText(dataPath);
         readBS = JsonUtility.FromJson<ReadBeatSaberFile>(dataAsJson);
