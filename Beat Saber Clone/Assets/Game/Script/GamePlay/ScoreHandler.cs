@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScoreHandler : MonoBehaviour
 {
+    public PlayerStatsFile playerFile;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text comboText;
     [SerializeField] private Text multiplyText;
@@ -26,6 +27,7 @@ public class ScoreHandler : MonoBehaviour
     {
         combo = 0;
         multiply = 0;
+        playerFile.hits_Missed++;
     }
 
     public void AddScore(float _Score)
@@ -38,5 +40,6 @@ public class ScoreHandler : MonoBehaviour
             multiply++;
             checkHits = 0;
         }
+        playerFile.hits_Total++;
     }
 }

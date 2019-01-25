@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     [Header("Set Script")]
     [SerializeField] private LoadFile loadFileScript;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private PlayerStats playerStatsScript;
 
     [Header("Set Button")]
     [SerializeField] private Button[] buttons;
@@ -224,6 +225,7 @@ public class Menu : MonoBehaviour
             difficultyButtons[4].transform.gameObject.SetActive(true);
         else
             difficultyButtons[4].transform.gameObject.SetActive(false);
+
     }
 
     void CheckButtons()
@@ -274,6 +276,7 @@ public class Menu : MonoBehaviour
         StartCoroutine(SetSelectedImage(selectedSongID));
         Difficulty(selectedSongID);
 
+        playerStatsScript.playerFile.songsPlayed++;
         loadBSFile.Load(getPath, loadFileScript.songOffset[selectedSongID]);
     }
 

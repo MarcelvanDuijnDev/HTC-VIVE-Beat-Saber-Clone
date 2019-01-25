@@ -6,6 +6,7 @@ using UnityEngine;
 public class Settings : MonoBehaviour
 {
     public SettingsFile saveFile;
+    public PlayerStats playerStats;
 
     private void Awake()
     {
@@ -25,6 +26,11 @@ public class Settings : MonoBehaviour
         string dataAsJson = File.ReadAllText(dataPath);
         saveFile = JsonUtility.FromJson<SettingsFile>(dataAsJson);
     }
+
+    private void OnApplicationQuit()
+    {
+        playerStats.Save();
+    }
 }
 
 [System.Serializable]
@@ -32,4 +38,6 @@ public class SettingsFile
 {
     public string gamePath;
     public bool fullscreen;
+    public Vector2 resolution;
+    public int graphicsQuality;
 }

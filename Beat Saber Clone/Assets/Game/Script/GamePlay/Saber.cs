@@ -119,7 +119,7 @@ public class Saber : MonoBehaviour
 
             if(hit.transform.gameObject.CompareTag("Bomb"))
             {
-                //Lose combo + get damage
+                scoreHandlerScript.Miss();
             }
         }
     }
