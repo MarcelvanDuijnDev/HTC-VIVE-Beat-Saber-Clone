@@ -15,6 +15,8 @@ public class LoadBeatSaberFile : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private ObjectPool[] objectPoolScript;
 
+    [SerializeField] private Animator animatorLights;
+
     private bool pauze;
     private int currentNote;
     private int currentObstacle;
@@ -24,6 +26,26 @@ public class LoadBeatSaberFile : MonoBehaviour
     {
         pauze = true;
         Time.timeScale = speed;
+        StartCoroutine(IRandomLights());
+    }
+
+    IEnumerator IRandomLights()
+    {
+        int randomInt = Random.Range(0, 3);
+        switch (randomInt)
+        {
+            case 0:
+                animatorLights.Play("Anim1");
+                break;
+            case 1:
+                animatorLights.Play("Anim2");
+                break;
+            case 2:
+                animatorLights.Play("Anim3");
+                break;
+        }
+        yield return new WaitForSeconds(Random.Range(0.5f, 10));
+        StartCoroutine(IRandomLights());
     }
 
     void FixedUpdate()
@@ -159,7 +181,7 @@ public class LoadBeatSaberFile : MonoBehaviour
 
     public void Load(string _path, float _offset)
     {
-        audioStartTime = _offset;
+        timer = _offset * timerSpeed;
         string dataPath = _path;
         string dataAsJson = File.ReadAllText(dataPath);
         readBS = JsonUtility.FromJson<ReadBeatSaberFile>(dataAsJson);

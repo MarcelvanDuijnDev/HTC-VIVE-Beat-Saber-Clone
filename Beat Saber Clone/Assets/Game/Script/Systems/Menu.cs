@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private LoadFile loadFileScript;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private PlayerStats playerStatsScript;
+    [SerializeField] private ScoreHandler scoreHandlerScript;
 
     [Header("Set Button")]
     [SerializeField] private Button[] buttons;
@@ -269,6 +270,8 @@ public class Menu : MonoBehaviour
         if (_difID == 4)
             getPath += "expertplus.json";
         inMenu = false;
+
+        scoreHandlerScript.currentSongName = songnames[selectedSongID];
 
         StartCoroutine(LoadAudio(selectedSongID));
         selectedSongText.text = songnames[selectedSongID];
