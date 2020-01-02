@@ -132,4 +132,16 @@ public class Saber : MonoBehaviour
             //haptic.Execute(1, 0.5f, 1, 0.5f, SteamVR_Input_Sources.LeftHand);
         }
     }
+
+    void OnCollisionEnter(Collision Other)
+    {
+        if (Other.gameObject.tag == "Button1")
+        {
+            Other.gameObject.GetComponent<MenuButtons>().MenuSelectSong();
+        }
+        if (Other.gameObject.tag == "Button")
+        {
+            Other.gameObject.GetComponent<MenuButtons>().MenuSelectSongDif();
+        }
+    }
 }

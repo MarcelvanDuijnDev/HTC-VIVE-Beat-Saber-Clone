@@ -7,6 +7,8 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
     #region Variables
+    [SerializeField] private GameObject selectobj;
+
     [Header("Set Script")]
     [SerializeField] private LoadFile loadFileScript;
     [SerializeField] private AudioSource audioSource;
@@ -184,9 +186,11 @@ public class Menu : MonoBehaviour
 
             menuObj.SetActive(true);
             gameObj.SetActive(false);
+            selectobj.SetActive(true);
         }
         else
         {
+            selectobj.SetActive(false);
             menuObj.SetActive(false);
             gameObj.SetActive(true);
         }
@@ -196,7 +200,17 @@ public class Menu : MonoBehaviour
         {
             inMenu = true;
             menuObj.SetActive(true);
+            selectobj.SetActive(true);
             gameObj.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextSong();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            PreviousSong();
         }
     }
 
