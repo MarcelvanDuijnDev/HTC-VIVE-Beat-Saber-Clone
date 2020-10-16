@@ -1,6 +1,6 @@
 # HTC-VIVE-Beat-Saber-Clone
 
-**The Game** <br>
+**This project** <br>
 With this game you can play Beat Saber maps inside Unity.
 
 **Project status: *(Jan-2020)*** <br>
