@@ -3,6 +3,7 @@
 **This project** <br>
 With this game you can play Beat Saber maps inside Unity.
 
-**Project status: *(Jan-2020)*** <br>
+**Project Created:** *(Jan-2019)* <br>
+**Project status:** *(Jan-2020)* <br>
 Project depricated.
 It won't work with the new file types that Beat Saber uses.
